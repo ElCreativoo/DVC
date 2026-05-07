@@ -103,14 +103,14 @@ export default function App() {
           scrolled ? 'py-1' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
-            {/* No background/ring — white glow drop-shadow makes black logo readable on dark */}
+            {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
             <img
               src={IMAGES.logoRound}
               alt="Das verrückte Café zum Hoheneck"
               className={`object-contain flex-shrink-0 transition-all duration-500 ${
                 scrolled
-                  ? 'w-20 h-20'
-                  : 'w-14 h-14 [filter:drop-shadow(0_0_6px_rgba(255,255,255,0.85))_drop-shadow(0_0_3px_rgba(255,255,255,0.7))]'
+                  ? 'w-20 h-20 opacity-100'
+                  : 'w-0 h-0 opacity-0 pointer-events-none'
               }`}
             />
           </a>
