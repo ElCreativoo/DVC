@@ -459,13 +459,6 @@ export default function App() {
                 <p className="text-bark/50 text-sm mt-1">Musik jede Woche</p>
               </div>
             </div>
-            <div className="mt-8">
-              <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 text-bark/70 hover:text-caramel transition-colors font-medium">
-                <IgIcon />
-                @das_verrueckte_cafe
-              </a>
-            </div>
           </FadeIn>
         </div>
       </section>
