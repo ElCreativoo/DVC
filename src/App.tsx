@@ -18,6 +18,7 @@ const IMAGES = {
   interior2: '/images/img15.webp',
   interior3: '/images/img16.webp',
   corner:    '/images/img17.webp',
+  disco2:    '/images/img18.webp',  // Freefall bottle + disco helmet
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -382,12 +383,24 @@ export default function App() {
           {/* Row 4: 1/3 + 2/3 */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <FadeIn delay={0}>
-              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-56 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-56 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-56 object-cover object-[center_60%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
+
+          {/* Feature image — full width */}
+          <FadeIn delay={0} className="mt-4">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] md:h-[560px] group">
+              <img src={IMAGES.disco2} alt="Freefall Craft Beer & Disco-Helm" className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bark/70 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8">
+                <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight drop-shadow-lg">Jedes Detail hat seinen Grund.</p>
+                <p className="text-white/70 mt-2 text-sm tracking-wide">Locher Craft · Freefall · Hoheneck</p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
