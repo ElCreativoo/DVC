@@ -116,7 +116,7 @@ export default function App() {
               alt="Das verrückte Café zum Hoheneck"
               className={`object-contain flex-shrink-0 transition-all duration-500 ${
                 scrolled
-                  ? 'w-20 h-20 opacity-100'
+                  ? 'w-24 h-24 opacity-100'
                   : 'w-0 h-0 opacity-0 pointer-events-none'
               }`}
             />
@@ -183,7 +183,7 @@ export default function App() {
             </h1>
 
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-xl mb-10 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)] animate-fadeUp" style={{ animationDelay: '200ms' }}>
-              Ein verrücktes Café, in dem erstaunlich wenig Kaffee getrunken wird – dafür umso lieber Craft Beer, Live-Musik und Nächte voller Leidenschaft.
+              Ein verrücktes Café, in dem erstaunlich wenig Kaffee getrunken wird – dafür umso mehr Craft Beer, Live-Musik und unvergessliche Nächte.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
@@ -342,7 +342,7 @@ export default function App() {
           {/* Row 1: 3 equal columns */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
             <FadeIn delay={0}>
-              <img src={IMAGES.owner} alt="Wirt zapft Bier" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.owner} alt="Ruben, Inhaber" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
               <img src={IMAGES.interior1} alt="Innenraum" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
@@ -430,7 +430,7 @@ export default function App() {
               <div>
                 <p className="font-display text-xl font-bold text-bark leading-snug">Verrückt genug,</p>
                 <p className="font-display text-xl font-bold text-caramel leading-snug">um besonders zu sein.</p>
-                <p className="text-bark text-sm mt-1 font-medium tracking-wide">Das Hoheneck · Engelberg ❤️</p>
+                <p className="text-bark text-sm mt-1 font-medium tracking-wide">Ruben · Inhaber & Gastgeber ❤️</p>
               </div>
             </div>
           </FadeIn>
@@ -614,7 +614,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12 pb-12 border-b border-white/10">
             <div className="flex items-center gap-5">
               {/* Footer: dark bg → invert logo to white, no wrapper div needed */}
-              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
+              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0" />
               <div>
                 <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
                 <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
