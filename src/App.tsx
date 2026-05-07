@@ -261,7 +261,7 @@ export default function App() {
               <img src={IMAGES.wallpaper} alt="Atmosphäre" className="rounded-2xl w-full h-60 object-cover shadow-lg" />
               <img src={IMAGES.vault} alt="Gewölbekeller" className="rounded-2xl w-full h-60 object-cover shadow-lg mt-10" />
               <img src={IMAGES.porch} alt="Terrasse" className="rounded-2xl w-full h-48 object-cover shadow-lg" />
-              <img src={IMAGES.disco2} alt="Disco-Helm & Craft Beer" className="rounded-2xl w-full h-48 object-cover object-center shadow-lg mt-6" />
+              <img src={IMAGES.beers} alt="Craft Beer auf dem Tisch" className="rounded-2xl w-full h-48 object-cover object-bottom shadow-lg mt-6" />
             </div>
           </FadeIn>
         </div>
