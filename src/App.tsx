@@ -210,7 +210,7 @@ export default function App() {
               </div>
               <div className="w-px h-8 bg-white/20" />
               <div>
-                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023 ❤️</p>
+                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
               </div>
               <div className="w-px h-8 bg-white/20 hidden sm:block" />
@@ -618,7 +618,7 @@ export default function App() {
               <div>
                 <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
                 <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
-                <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023</p>
+                <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023 ❤️</p>
               </div>
             </div>
             <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
