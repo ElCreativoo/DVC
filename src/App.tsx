@@ -151,20 +151,11 @@ export default function App() {
       </header>
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-between overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <img src={IMAGES.bar} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/60 to-bark/25" />
           <div className="absolute inset-0 bg-gradient-to-r from-bark/50 via-transparent to-transparent" />
-        </div>
-
-        {/* TOP — logo anchors the hero visually below the navbar */}
-        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full pt-28 md:pt-32 animate-fadeUp">
-          <img
-            src={IMAGES.logoRound}
-            alt="Das verrückte Café zum Hoheneck"
-            className="w-24 h-24 md:w-32 md:h-32 object-contain [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.9))_drop-shadow(0_0_5px_rgba(255,255,255,0.75))]"
-          />
         </div>
 
         {/* BOTTOM — main hero content */}
