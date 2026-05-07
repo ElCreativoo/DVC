@@ -85,7 +85,7 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 160)
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -102,7 +102,7 @@ export default function App() {
       {/* ─── NAV ─────────────────────────────────────────────── */}
       {/* When atBottom: slides to the bottom of viewport via translateY */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
           scrolled
             ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
             : 'bg-transparent'
