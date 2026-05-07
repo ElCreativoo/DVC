@@ -100,13 +100,13 @@ export default function App() {
       {/* ─── NAV ─────────────────────────────────────────────── */}
       {/* When atBottom: slides to the bottom of viewport via translateY */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           scrolled
             ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
             : 'bg-transparent'
         }`}
       >
-        <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
+        <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           scrolled ? '-my-2' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
@@ -114,7 +114,8 @@ export default function App() {
             <img
               src={IMAGES.logoRound}
               alt="Das verrückte Café zum Hoheneck"
-              className={`object-contain flex-shrink-0 transition-all duration-500 ${
+              style={{ transition: 'width 700ms cubic-bezier(0.4,0,0.2,1), height 700ms cubic-bezier(0.4,0,0.2,1), opacity 600ms cubic-bezier(0.4,0,0.2,1)' }}
+              className={`object-contain flex-shrink-0 ${
                 scrolled
                   ? 'w-24 h-24 opacity-100'
                   : 'w-0 h-0 opacity-0 pointer-events-none'
