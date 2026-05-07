@@ -20,6 +20,7 @@ const IMAGES = {
   corner:    '/images/img17.webp',
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
+  logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
 }
 
 const testimonials = [
@@ -101,29 +102,17 @@ export default function App() {
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
           scrolled ? 'py-2' : 'py-4'
         }`}>
-          <a href="#" className="flex items-center gap-3 group">
-            {/* Logo — on dark (hero) invert to white, on light show naturally */}
-            <div className={`transition-all duration-500 overflow-hidden rounded-full flex-shrink-0 ${
-              scrolled
-                ? 'w-14 h-14 bg-white p-1.5 shadow-md'
-                : 'w-11 h-11 bg-white/20 backdrop-blur-sm p-1.5 ring-2 ring-white/30'
-            }`}>
-              <img
-                src={IMAGES.logoRound}
-                alt="Logo"
-                className={`w-full h-full object-contain transition-all duration-500 ${scrolled ? '' : '[filter:invert(1)_brightness(10)]'}`}
-              />
-            </div>
-            <div className="hidden sm:block">
-              <p className={`text-xs tracking-widest uppercase transition-colors ${scrolled ? 'text-bark/45' : 'text-white/60'}`}>
-                Engelberg · ESTD 2023
-              </p>
-              <p className={`font-display font-semibold leading-tight transition-all duration-500 ${
-                scrolled ? 'text-bark text-base' : 'text-white text-sm'
-              }`}>
-                Das verrückte Café
-              </p>
-            </div>
+          <a href="#" className="flex items-center gap-2 group">
+            {/* Round logo — NO wrapper div. Use filter:invert on dark, natural on light */}
+            <img
+              src={IMAGES.logoRound}
+              alt="Das verrückte Café zum Hoheneck"
+              className={`object-contain flex-shrink-0 transition-all duration-500 ${
+                scrolled
+                  ? 'w-14 h-14'                              // light bg: show black logo naturally
+                  : 'w-11 h-11 [filter:invert(1)]'           // dark bg: invert to white
+              }`}
+            />
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -226,11 +215,13 @@ export default function App() {
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
               </div>
               <div className="w-px h-8 bg-white/20 hidden sm:block" />
-              {/* Round logo as 4th stat element */}
-              <div className="hidden sm:flex items-center gap-3">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full p-2 shadow-2xl shadow-bark/40 ring-2 ring-white/50 flex-shrink-0">
-                  <img src={IMAGES.logoRound} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-contain" />
-                </div>
+              {/* New white wordmark — transparent bg, shows perfectly on dark hero */}
+              <div className="hidden sm:block">
+                <img
+                  src={IMAGES.logoText2}
+                  alt="Das verrückte Café zum Hoheneck"
+                  className="h-14 md:h-16 object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                />
               </div>
             </div>
           </div>
@@ -438,9 +429,8 @@ export default function App() {
               className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover shadow-2xl"
             />
             <div className="absolute bottom-6 left-6 right-6 bg-cream rounded-2xl p-5 shadow-2xl border border-bark/8 flex items-center gap-4">
-              <div className="w-16 h-16 flex-shrink-0 bg-white rounded-full p-1.5 shadow-md border border-bark/8">
-                <img src={IMAGES.logoRound} alt="Logo" className="w-full h-full object-contain" />
-              </div>
+              {/* Logo on cream/light background — show naturally (black logo visible) */}
+              <img src={IMAGES.logoRound} alt="Logo" className="w-16 h-16 flex-shrink-0 object-contain" />
               <div>
                 <p className="font-display text-xl font-bold text-bark leading-snug">Verrückt genug,</p>
                 <p className="font-display text-xl font-bold text-caramel leading-snug">um besonders zu sein.</p>
@@ -505,9 +495,8 @@ export default function App() {
               <FadeIn>
                 <div className="max-w-2xl">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-white rounded-full p-1.5 flex-shrink-0">
-                      <img src={IMAGES.logoRound} alt="" className="w-full h-full object-contain" />
-                    </div>
+                    {/* Logo on dark overlay — invert to white */}
+                    <img src={IMAGES.logoRound} alt="" className="w-10 h-10 object-contain flex-shrink-0 [filter:invert(1)]" />
                     <IgIcon className="w-6 h-6 text-white/60" />
                     <span className="text-white/70 text-sm font-medium tracking-wide">@das_verrueckte_cafe</span>
                   </div>
@@ -628,9 +617,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12 pb-12 border-b border-white/10">
             <div className="flex items-center gap-5">
-              <div className="w-20 h-20 bg-white rounded-full flex-shrink-0 p-2.5 shadow-lg">
-                <img src={IMAGES.logoRound} alt="Logo" className="w-full h-full object-contain" />
-              </div>
+              {/* Footer: dark bg → invert logo to white, no wrapper div needed */}
+              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
               <div>
                 <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
                 <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
