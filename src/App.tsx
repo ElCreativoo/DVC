@@ -78,15 +78,12 @@ function FadeIn({ children, delay = 0, className = '' }: {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [atBottom, setAtBottom] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', date: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50)
-      const nearBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 80
-      setAtBottom(nearBottom)
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -104,16 +101,13 @@ export default function App() {
       {/* When atBottom: slides to the bottom of viewport via translateY */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
-          atBottom
-            ? 'bg-cream border-t border-bark/10'
-            : scrolled
-              ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
-              : 'bg-transparent'
+          scrolled
+            ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
+            : 'bg-transparent'
         }`}
-        style={{ transform: atBottom ? 'translateY(calc(100vh - 100%))' : 'translateY(0)' }}
       >
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
-          scrolled || atBottom ? 'py-1' : 'py-3'
+          scrolled ? 'py-1' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
             {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
@@ -121,7 +115,7 @@ export default function App() {
               src={IMAGES.logoRound}
               alt="Das verrückte Café zum Hoheneck"
               className={`object-contain flex-shrink-0 transition-all duration-500 ${
-                scrolled || atBottom
+                scrolled
                   ? 'w-20 h-20 opacity-100'
                   : 'w-0 h-0 opacity-0 pointer-events-none'
               }`}
