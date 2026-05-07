@@ -97,22 +97,28 @@ export default function App() {
 
       {/* ─── NAV ─────────────────────────────────────────────── */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-cream/97 backdrop-blur-xl shadow-sm border-b border-bark/8' : 'bg-transparent'
+        scrolled ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8' : 'bg-transparent'
       }`}>
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-2' : 'py-4'
+          scrolled ? 'py-1' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
-            {/* Round logo — NO wrapper div. Use filter:invert on dark, natural on light */}
-            <img
-              src={IMAGES.logoRound}
-              alt="Das verrückte Café zum Hoheneck"
-              className={`object-contain flex-shrink-0 transition-all duration-500 ${
-                scrolled
-                  ? 'w-14 h-14'                              // light bg: show black logo naturally
-                  : 'w-11 h-11 [filter:invert(1)]'           // dark bg: invert to white
-              }`}
-            />
+            {/*
+              Logo ALWAYS black:
+              – hero (dark bg): cream pill background so black logo is visible; CSS bg = no flash
+              – scrolled (light nav): just the logo, bigger, with a warm drop-shadow
+            */}
+            <div className={`transition-all duration-500 flex-shrink-0 flex items-center justify-center ${
+              scrolled
+                ? 'w-20 h-20 drop-shadow-[0_2px_8px_rgba(43,30,20,0.18)]'
+                : 'w-14 h-14 rounded-full bg-cream/90 backdrop-blur-md p-2 shadow-lg ring-1 ring-white/20'
+            }`}>
+              <img
+                src={IMAGES.logoRound}
+                alt="Das verrückte Café zum Hoheneck"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -151,16 +157,27 @@ export default function App() {
       </header>
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-end pb-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
           <img src={IMAGES.bar} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover" />
-          {/* Stronger, more even gradient so all text is clearly readable */}
-          <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/65 to-bark/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/60 to-bark/25" />
           <div className="absolute inset-0 bg-gradient-to-r from-bark/50 via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full">
+        {/* TOP — logo anchors the hero visually below the navbar */}
+        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full pt-28 md:pt-32 animate-fadeUp">
+          {/* Large logo in cream pill — always BLACK, no inversion, no flash */}
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-cream/92 backdrop-blur-sm p-3 shadow-2xl ring-2 ring-white/25">
+            <img
+              src={IMAGES.logoRound}
+              alt="Das verrückte Café zum Hoheneck"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
 
+        {/* BOTTOM — main hero content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full pb-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/12 backdrop-blur-sm text-white text-xs tracking-widest uppercase mb-6 animate-fadeUp" style={{ animationDelay: '80ms' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-caramel animate-pulse" />
@@ -188,8 +205,8 @@ export default function App() {
               </a>
             </div>
 
-            {/* Stats row — round logo lives here as 4th item */}
-            <div className="flex items-center gap-6 md:gap-10 animate-fadeUp" style={{ animationDelay: '350ms' }}>
+            {/* Stats row + oversized wordmark */}
+            <div className="flex flex-wrap items-center gap-5 md:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
               <div>
                 <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Live</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Bands jede Woche</p>
@@ -204,13 +221,13 @@ export default function App() {
                 <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
               </div>
+              {/* Wordmark — bold, large, unmissable */}
               <div className="w-px h-8 bg-white/20 hidden sm:block" />
-              {/* New white wordmark — transparent bg, shows perfectly on dark hero */}
               <div className="hidden sm:block">
                 <img
                   src={IMAGES.logoText2}
                   alt="Das verrückte Café zum Hoheneck"
-                  className="h-14 md:h-16 object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+                  className="h-24 md:h-28 object-contain object-left drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]"
                 />
               </div>
             </div>
