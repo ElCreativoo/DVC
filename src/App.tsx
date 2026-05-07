@@ -260,7 +260,7 @@ export default function App() {
               <img src={IMAGES.wallpaper} alt="Atmosphäre" className="rounded-2xl w-full h-60 object-cover shadow-lg" />
               <img src={IMAGES.vault} alt="Gewölbekeller" className="rounded-2xl w-full h-60 object-cover shadow-lg mt-10" />
               <img src={IMAGES.porch} alt="Terrasse" className="rounded-2xl w-full h-48 object-cover shadow-lg" />
-              <img src={IMAGES.disco2} alt="Disco-Helm & Craft Beer" className="rounded-2xl w-full h-48 object-cover object-[center_65%] shadow-lg mt-6" />
+              <img src={IMAGES.beers} alt="Craft Beer auf dem Tisch" className="rounded-2xl w-full h-48 object-cover object-bottom shadow-lg mt-6" />
             </div>
           </FadeIn>
         </div>
@@ -386,10 +386,15 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 5: helmetGirl centred, small, fully visible */}
-          <div className="flex justify-center">
-            <FadeIn delay={0} className="w-full sm:w-1/3">
-              <img src={IMAGES.helmetGirl} alt="Disco-Helm" className="rounded-3xl w-full object-contain hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+          {/* Row 5: disco2 wide + helmetGirl portrait */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <FadeIn delay={0} className="sm:col-span-2">
+              <img src={IMAGES.disco2} alt="Freefall Craft Beer" className="rounded-3xl w-full h-72 object-cover object-[center_80%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={80}>
+              <div className="rounded-3xl overflow-hidden shadow-md h-72 bg-[#f5f0e8] flex items-center justify-center hover:scale-[1.02] transition-transform duration-500">
+                <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="h-full w-full object-contain" />
+              </div>
             </FadeIn>
           </div>
 
