@@ -107,7 +107,7 @@ export default function App() {
         }`}
       >
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-0' : 'py-3'
+          scrolled ? '-my-2' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
             {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
@@ -210,14 +210,14 @@ export default function App() {
               </div>
               <div className="w-px h-8 bg-white/20" />
               <div>
-                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
+                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023 ❤️</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
               </div>
               <div className="w-px h-8 bg-white/20 hidden sm:block" />
               <img
                 src={IMAGES.logoText2}
                 alt="Das verrückte Café zum Hoheneck"
-                className="hidden sm:block h-40 md:h-52 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6 translate-y-6"
+                className="hidden sm:block h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6 translate-y-3"
               />
             </div>
           </div>
