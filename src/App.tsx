@@ -78,11 +78,16 @@ function FadeIn({ children, delay = 0, className = '' }: {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [atBottom, setAtBottom] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', date: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50)
+      const nearBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 80
+      setAtBottom(nearBottom)
+    }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -96,11 +101,15 @@ export default function App() {
     <div className="bg-cream text-bark overflow-x-hidden">
 
       {/* ─── NAV ─────────────────────────────────────────────── */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8' : 'bg-transparent'
-      }`}>
+      {/* When atBottom: slides to the bottom of viewport via translateY */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+          scrolled || atBottom ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8' : 'bg-transparent'
+        }`}
+        style={{ transform: atBottom ? 'translateY(calc(100vh - 100%))' : 'translateY(0)' }}
+      >
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-1' : 'py-3'
+          scrolled || atBottom ? 'py-1' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
             {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
@@ -202,15 +211,6 @@ export default function App() {
               <div>
                 <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
-              </div>
-              {/* Wordmark — bold, large, unmissable */}
-              <div className="w-px h-8 bg-white/20 hidden sm:block" />
-              <div className="hidden sm:block">
-                <img
-                  src={IMAGES.logoText2}
-                  alt="Das verrückte Café zum Hoheneck"
-                  className="h-24 md:h-28 object-contain object-left drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]"
-                />
               </div>
             </div>
           </div>
