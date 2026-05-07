@@ -389,10 +389,10 @@ export default function App() {
           {/* Row 5: 1/2 + 1/2 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FadeIn delay={0}>
-              <img src={IMAGES.disco2} alt="Freefall Craft Beer" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.disco2} alt="Freefall Craft Beer" className="rounded-3xl w-full h-72 object-cover object-[center_65%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.helmetGirl} alt="Disco-Helm" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.helmetGirl} alt="Disco-Helm" className="rounded-3xl w-full h-72 object-cover object-[center_30%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
