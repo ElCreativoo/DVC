@@ -392,21 +392,18 @@ export default function App() {
       </section>
 
       {/* ─── REZENSIONEN ──────────────────────────────────────── */}
-      <section className="bg-[#1a1005] text-white py-24 md:py-32 px-5 md:px-10">
+      <section className="bg-[#1a1005] text-white py-14 md:py-20 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Stimmen</p>
-            <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-16 max-w-3xl">
-              "Die Stimmung kann man nicht erklären.{' '}
-              <em className="text-caramel">Man muss sie erleben."</em>
-            </h2>
+          <FadeIn className="flex items-baseline gap-4 mb-8">
+            <p className="text-caramel text-xs tracking-widest uppercase font-semibold">Vibes</p>
+            <div className="h-px flex-1 bg-white/10" />
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
             {testimonials.map((t, i) => (
-              <FadeIn key={i} delay={i * 80}>
-                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-300 h-full flex flex-col">
-                  <div className="text-caramel text-xl mb-6 tracking-wider">★★★★★</div>
-                  <p className="font-display text-xl md:text-2xl leading-relaxed text-white/90 flex-1 tracking-tight">
+              <FadeIn key={i} delay={i * 60}>
+                <div className="border border-white/8 rounded-2xl p-5 h-full flex flex-col gap-3">
+                  <div className="text-caramel text-sm tracking-wider">★★★★★</div>
+                  <p className="text-white/75 text-sm leading-relaxed flex-1">
                     "{t.text}"
                   </p>
                 </div>
