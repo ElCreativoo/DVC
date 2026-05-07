@@ -164,12 +164,15 @@ export default function App() {
       </header>
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
           <img src={IMAGES.bar} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/60 to-bark/25" />
           <div className="absolute inset-0 bg-gradient-to-r from-bark/50 via-transparent to-transparent" />
         </div>
+
+        {/* TOP — empty spacer, keeps hero balanced */}
+        <div className="pt-28 md:pt-36" />
 
         {/* BOTTOM — main hero content */}
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full pb-20">
