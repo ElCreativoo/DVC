@@ -85,7 +85,7 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 160)
+      setScrolled(window.scrollY > 60)
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -102,15 +102,13 @@ export default function App() {
       {/* ─── NAV ─────────────────────────────────────────────── */}
       {/* When atBottom: slides to the bottom of viewport via translateY */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
-          scrolled
-            ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          scrolled ? 'bg-cream/97 backdrop-blur-xl border-bark/8' : 'bg-transparent border-transparent'
         }`}
       >
-        <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-          scrolled ? '-my-2' : 'py-3'
-        }`}>
+        <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between ${
+          scrolled ? 'py-0' : 'py-3'
+        }`} style={{ transition: 'padding 900ms cubic-bezier(0.4,0,0.2,1)' }}>
           <a href="#" className="flex items-center gap-2 group">
             {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
             <img
