@@ -212,6 +212,12 @@ export default function App() {
                 <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
                 <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
               </div>
+              <div className="w-px h-8 bg-white/20 hidden sm:block" />
+              <img
+                src={IMAGES.logoText2}
+                alt="Das verrückte Café zum Hoheneck"
+                className="hidden sm:block h-32 md:h-40 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+              />
             </div>
           </div>
         </div>
