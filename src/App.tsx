@@ -107,7 +107,7 @@ export default function App() {
         }`}
       >
         <div className={`max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? 'py-1' : 'py-3'
+          scrolled ? 'py-0' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
             {/* Logo only visible when scrolled — on dark hero the big hero logo takes this role */}
