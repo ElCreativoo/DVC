@@ -1,35 +1,35 @@
 import { useState, useEffect, useRef } from 'react'
 
 const IMAGES = {
-  outdoor: '/images/img1.webp',       // outdoor terrace, guy with beer
-  bar: '/images/img2.webp',           // bar interior with disco balls
-  disco: '/images/img3.webp',         // bar with freefall beer + disco helmet
-  beers: '/images/img4.webp',         // craft beer bottles on bar
-  vault: '/images/img5.webp',         // stone vault cellar seating
-  beer2: '/images/img6.webp',         // craft beer bottles close-up
-  barFull: '/images/img7.webp',       // full bar with flamingo tap
-  owner: '/images/img8.webp',         // owner pouring beer
-  cellar: '/images/img9.webp',        // cellar bar view
-  terrace: '/images/img10.webp',      // outdoor terrace building
+  // Original photos
+  outdoor: '/images/img1.webp',
+  bar: '/images/img2.webp',
+  disco: '/images/img3.webp',
+  beers: '/images/img4.webp',
+  vault: '/images/img5.webp',
+  beer2: '/images/img6.webp',
+  barFull: '/images/img7.webp',
+  owner: '/images/img8.webp',
+  cellar: '/images/img9.webp',
+  terrace: '/images/img10.webp',
+  // New photos
+  porch: '/images/img11.webp',       // covered porch with cozy cushioned seats
+  interior1: '/images/img12.webp',   // wide interior, wooden ceiling + guitar poster
+  wallpaper: '/images/img13.webp',   // William Morris wallpaper, warm lamps
+  lantern: '/images/img14.webp',     // Edison bulb lantern close-up
+  interior2: '/images/img15.webp',   // interior from bar counter angle
+  interior3: '/images/img16.webp',   // bar counter + wooden floor
+  corner: '/images/img17.webp',      // guitar poster corner, floral wallpaper
+  // Logos
+  logoRound: '/images/logo-round.png',
+  logoText: '/images/logo-text.png',
 }
 
 const testimonials = [
-  {
-    name: 'Markus Mahler',
-    text: 'Augustiner offen, kreatives Essen, gutes Ambiente, Live-Musik. Einfach ein sehr cooler Schuppen.',
-  },
-  {
-    name: 'Joe Kretz',
-    text: 'Hier trifft sich Engelberg und Stockholm. Mix aus Locals, Touristen, Musikliebhaber und Barhänger.',
-  },
-  {
-    name: 'Google User',
-    text: 'Qualitativ hochwertige Drinks und Food im gemütlichen Lokal. Alles frisch, handgemacht und mit Abstand das beste Lokal im Dorf.',
-  },
-  {
-    name: 'Claudia Steinmann',
-    text: 'Sehr willkommen gefühlt. Lockere Atmosphäre, regionales Essen und unglaublich sympathischer Service.',
-  },
+  { text: 'Augustiner offen, kreatives Essen, gutes Ambiente, Live-Musik. Einfach ein sehr cooler Schuppen.' },
+  { text: 'Hier trifft sich Engelberg und Stockholm. Mix aus Locals, Touristen, Musikliebhaber und Barhänger.' },
+  { text: 'Qualitativ hochwertige Drinks und Food im gemütlichen Lokal. Alles frisch, handgemacht und mit Abstand das beste Lokal im Dorf.' },
+  { text: 'Sehr willkommen gefühlt. Lockere Atmosphäre, regionales Essen und unglaublich sympathischer Service.' },
 ]
 
 const highlights = [
@@ -39,7 +39,7 @@ const highlights = [
   { emoji: '🍽️', title: 'Kreative Küche', desc: 'Frische Zutaten, regionale Produkte und ehrliches Food mit modernem Twist.' },
 ]
 
-function useIntersection(threshold = 0.15) {
+function useIntersection(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function App() {
     setSubmitted(true)
   }
 
-  const marqueeItems = ['Live Musik', 'Craft Beer', 'Après-Ski', 'Gewölbekeller', 'Engelberg', 'Locher Craft', 'DJ Nächte', 'Outdoor Terrasse']
+  const marqueeItems = ['Live Musik', 'Craft Beer', 'Après-Ski', 'Gewölbekeller', 'Engelberg', 'Locher Craft', 'DJ Nächte', 'Outdoor Terrasse', 'ESTD 2023']
 
   return (
     <div className="bg-cream text-bark overflow-x-hidden">
@@ -92,17 +92,19 @@ export default function App() {
       {/* ─── NAV ─────────────────────────────────────────────── */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-cream/95 backdrop-blur-xl shadow-sm border-b border-bark/10' : 'bg-transparent'
+          scrolled ? 'bg-cream/96 backdrop-blur-xl shadow-sm border-b border-bark/10' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-bark flex items-center justify-center text-cream text-lg font-display font-bold group-hover:bg-caramel transition-colors">
-              H
-            </div>
-            <div>
-              <p className={`text-xs tracking-widest uppercase transition-colors ${scrolled ? 'text-bark/50' : 'text-white/60'}`}>
-                Engelberg
+            <img
+              src={IMAGES.logoRound}
+              alt="Das verrückte Café zum Hoheneck Logo"
+              className={`w-12 h-12 object-contain transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+            />
+            <div className="hidden sm:block">
+              <p className={`text-xs tracking-widest uppercase transition-colors ${scrolled ? 'text-bark/45' : 'text-white/55'}`}>
+                Engelberg · ESTD 2023
               </p>
               <p className={`font-display font-semibold text-sm leading-tight transition-colors ${scrolled ? 'text-bark' : 'text-white'}`}>
                 Das verrückte Café
@@ -111,13 +113,13 @@ export default function App() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {['Atmosphäre', 'Erlebnis', 'Galerie', 'Über uns'].map((item) => (
+            {[['Atmosphäre', '#atmosphare'], ['Erlebnis', '#erlebnis'], ['Galerie', '#galerie'], ['Über uns', '#uber-uns']].map(([label, href]) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace('ü', 'u')}`}
+                key={label}
+                href={href}
                 className={`transition-colors hover:text-caramel ${scrolled ? 'text-bark/70' : 'text-white/80'}`}
               >
-                {item}
+                {label}
               </a>
             ))}
           </nav>
@@ -125,12 +127,17 @@ export default function App() {
           <div className="flex items-center gap-4">
             <a
               href="#reservierung"
-              className="hidden md:inline-flex bg-bark text-cream px-5 py-2.5 rounded-full text-sm font-medium hover:bg-caramel transition-colors duration-300"
+              className={`hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                scrolled
+                  ? 'bg-bark text-cream hover:bg-caramel'
+                  : 'bg-white/15 text-white border border-white/30 hover:bg-white/25 backdrop-blur-sm'
+              }`}
             >
               Reservieren
             </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menü"
               className={`md:hidden w-8 h-8 flex flex-col justify-center gap-1.5 ${scrolled ? 'text-bark' : 'text-white'}`}
             >
               <span className={`block h-0.5 bg-current transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -141,16 +148,16 @@ export default function App() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-64 border-b border-bark/10' : 'max-h-0'}`}>
+        <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-2">
-            {['Atmosphäre', 'Erlebnis', 'Galerie', 'Über uns', 'Reservieren'].map((item) => (
+            {[['Atmosphäre', '#atmosphare'], ['Erlebnis', '#erlebnis'], ['Galerie', '#galerie'], ['Über uns', '#uber-uns'], ['Reservieren', '#reservierung']].map(([label, href]) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace('ü', 'u').replace(' ', '-')}`}
+                key={label}
+                href={href}
                 onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors"
               >
-                {item}
+                {label}
               </a>
             ))}
           </div>
@@ -160,26 +167,32 @@ export default function App() {
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-end pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={IMAGES.bar}
-            alt="Das verrückte Café zum Hoheneck – Bar"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-bark/90 via-bark/40 to-bark/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bark/30 to-transparent" />
+          <img src={IMAGES.interior3} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bark/92 via-bark/45 to-bark/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bark/35 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full">
+          {/* Logo wordmark centered-ish above headline */}
+          <div className="mb-6 animate-fadeUp">
+            <img
+              src={IMAGES.logoText}
+              alt="Das verrückte Café zum Hoheneck"
+              className="h-24 md:h-32 object-contain"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </div>
+
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm text-white/90 text-xs tracking-widest uppercase mb-8 animate-fadeUp">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm text-white/90 text-xs tracking-widest uppercase mb-7 animate-fadeUp">
               <span className="w-1.5 h-1.5 rounded-full bg-caramel animate-pulse" />
-              Engelbergs kultigstes Lokal
+              Engelbergs kultigstes Lokal seit 2023
             </div>
 
             <h1 className="font-display text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.92] tracking-tight mb-6 animate-fadeUp" style={{ animationDelay: '100ms' }}>
-              Das verrückte<br />
-              <em className="text-caramel not-italic">Café</em> zum<br />
-              Hoheneck.
+              Craft Beer.<br />
+              Live Musik.<br />
+              <em className="text-caramel not-italic">Echter Vibe.</em>
             </h1>
 
             <p className="text-white/75 text-lg md:text-xl leading-relaxed max-w-xl mb-10 animate-fadeUp" style={{ animationDelay: '200ms' }}>
@@ -201,12 +214,11 @@ export default function App() {
               </a>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fadeUp" style={{ animationDelay: '400ms' }}>
+            <div className="mt-16 grid grid-cols-3 gap-6 animate-fadeUp" style={{ animationDelay: '400ms' }}>
               {[
-                { value: '4.7★', label: 'Google Bewertung' },
                 { value: 'Live', label: 'Bands jede Woche' },
-                { value: '1.2K+', label: 'Instagram Fans' },
-                { value: 'Kultstatus', label: 'seit Jahren' },
+                { value: 'Kult', label: 'Bar in Engelberg' },
+                { value: 'ESTD', label: '2023' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-white text-2xl md:text-3xl font-display font-bold">{stat.value}</p>
@@ -217,15 +229,14 @@ export default function App() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 right-10 text-white/40 text-xs tracking-widest uppercase rotate-90 hidden md:block animate-fadeUp">
+        <div className="absolute bottom-8 right-10 text-white/40 text-xs tracking-widest uppercase rotate-90 hidden md:block">
           Scroll
         </div>
       </section>
 
       {/* ─── MARQUEE ──────────────────────────────────────────── */}
       <div className="bg-bark text-cream py-4 overflow-hidden border-y border-caramel/30">
-        <div className="flex animate-marquee whitespace-nowrap gap-0">
+        <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-4 px-8 text-sm font-medium tracking-widest uppercase">
               <span className="text-caramel">✦</span>
@@ -249,7 +260,7 @@ export default function App() {
               Das verrückte Café zum Hoheneck ist kein gewöhnliches Lokal. Hier treffen sich Locals, Musikliebhaber, Reisende und Nachtschwärmer – in einem Raum mit echtem Charakter.
             </p>
             <p className="text-bark/65 text-lg leading-relaxed mb-10">
-              Disco-Kugeln neben Weinflaschen-Lampenschirmen, Blumentapeten im Steingewölbekeller, ein Flamingo auf dem Zapfhahn – so entsteht eine Energie, die man anderswo nicht findet.
+              Disco-Kugeln neben Weinflaschen-Lampenschirmen, William-Morris-Tapete neben Gitarren-Postern, ein Flamingo auf dem Zapfhahn – jedes Detail hat seinen Grund.
             </p>
             <a href="#erlebnis" className="inline-flex items-center gap-2 text-caramel font-semibold hover:gap-4 transition-all duration-300">
               Mehr erfahren <span>→</span>
@@ -258,31 +269,15 @@ export default function App() {
 
           <FadeIn delay={150} className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <img
-                src={IMAGES.barFull}
-                alt="Bar mit Disco-Kugel"
-                className="rounded-2xl w-full h-64 object-cover shadow-lg"
-              />
-              <img
-                src={IMAGES.vault}
-                alt="Gewölbekeller"
-                className="rounded-2xl w-full h-64 object-cover shadow-lg mt-8"
-              />
-              <img
-                src={IMAGES.outdoor}
-                alt="Terrasse"
-                className="rounded-2xl w-full h-52 object-cover shadow-lg"
-              />
-              <img
-                src={IMAGES.cellar}
-                alt="Kellerbar"
-                className="rounded-2xl w-full h-52 object-cover shadow-lg mt-4"
-              />
+              <img src={IMAGES.wallpaper} alt="William Morris Tapete & Atmosphäre" className="rounded-2xl w-full h-64 object-cover shadow-lg" />
+              <img src={IMAGES.vault} alt="Gewölbekeller" className="rounded-2xl w-full h-64 object-cover shadow-lg mt-8" />
+              <img src={IMAGES.porch} alt="Gedeckte Terrasse" className="rounded-2xl w-full h-52 object-cover shadow-lg" />
+              <img src={IMAGES.lantern} alt="Edison-Lampe" className="rounded-2xl w-full h-52 object-cover shadow-lg mt-4 object-center" />
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-bark text-cream rounded-2xl px-6 py-5 shadow-2xl animate-float hidden md:block">
-              <p className="font-display text-3xl font-bold text-caramel">4.7★</p>
-              <p className="text-white/60 text-xs mt-1 max-w-[140px]">Beste Bar in Engelberg</p>
+            {/* Logo badge floating */}
+            <div className="absolute -bottom-6 -left-4 md:-left-8 bg-bark rounded-2xl px-5 py-4 shadow-2xl animate-float hidden md:block">
+              <img src={IMAGES.logoRound} alt="Logo" className="w-16 h-16 object-contain brightness-0 invert" />
             </div>
           </FadeIn>
         </div>
@@ -307,7 +302,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-5 mb-16">
             {highlights.map((h, i) => (
               <FadeIn key={h.title} delay={i * 80}>
-                <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-400 group hover:-translate-y-1">
+                <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-400 group hover:-translate-y-1 h-full">
                   <div className="w-14 h-14 rounded-2xl bg-caramel/20 flex items-center justify-center text-2xl mb-7 group-hover:scale-110 transition-transform">
                     {h.emoji}
                   </div>
@@ -317,6 +312,18 @@ export default function App() {
               </FadeIn>
             ))}
           </div>
+
+          {/* Wide interior photo strip */}
+          <FadeIn>
+            <div className="relative rounded-3xl overflow-hidden mb-16">
+              <img src={IMAGES.interior1} alt="Innenraum Bar" className="w-full h-72 md:h-96 object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-bark/60 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 md:left-12">
+                <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight">Hier spielt die Musik.</p>
+                <p className="text-white/60 mt-2">Live Bands · DJ Nächte · Après-Ski</p>
+              </div>
+            </div>
+          </FadeIn>
 
           {/* Opening hours strip */}
           <FadeIn>
@@ -354,79 +361,48 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Masonry-style grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-            {/* Big hero image */}
-            <FadeIn className="col-span-2 row-span-2">
-              <img
-                src={IMAGES.owner}
-                alt="Wirt zapft Bier"
-                className="rounded-3xl w-full h-80 md:h-[480px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+          {/* Row 1 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4">
+            <FadeIn className="col-span-2 md:col-span-1 row-span-2">
+              <img src={IMAGES.owner} alt="Wirt zapft Bier" className="rounded-3xl w-full h-72 md:h-full md:min-h-[480px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={60}>
-              <img
-                src={IMAGES.bar}
-                alt="Bar Innenraum"
-                className="rounded-3xl w-full h-52 md:h-[232px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.wallpaper} alt="William Morris Atmosphäre" className="rounded-3xl w-full h-56 md:h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={90}>
-              <img
-                src={IMAGES.vault}
-                alt="Steingewölbe"
-                className="rounded-3xl w-full h-52 md:h-[232px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.vault} alt="Steingewölbe" className="rounded-3xl w-full h-56 md:h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={120}>
-              <img
-                src={IMAGES.cellar}
-                alt="Kellerbar"
-                className="rounded-3xl w-full h-52 md:h-[232px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.interior2} alt="Bar Innenansicht" className="rounded-3xl w-full h-56 md:h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={150}>
-              <img
-                src={IMAGES.barFull}
-                alt="Vollständige Bar"
-                className="rounded-3xl w-full h-52 md:h-[232px] object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-56 md:h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
+          </div>
 
+          {/* Row 2 — wide panoramic shots */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4">
             <FadeIn delay={60} className="col-span-2">
-              <img
-                src={IMAGES.terrace}
-                alt="Terrasse Engelberg"
-                className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg object-top"
-              />
+              <img src={IMAGES.interior1} alt="Grosser Innenraum" className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={90}>
-              <img
-                src={IMAGES.disco}
-                alt="Craft Beer"
-                className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.porch} alt="Gedeckte Terrasse" className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
             </FadeIn>
-
             <FadeIn delay={120}>
-              <img
-                src={IMAGES.beer2}
-                alt="Locher Craft Beer"
-                className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg object-center" />
             </FadeIn>
+          </div>
 
-            <FadeIn delay={150}>
-              <img
-                src={IMAGES.beers}
-                alt="Craft Beer Sortiment"
-                className="rounded-3xl w-full h-56 md:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg"
-              />
+          {/* Row 3 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <FadeIn delay={60}>
+              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
+            </FadeIn>
+            <FadeIn delay={90}>
+              <img src={IMAGES.beers} alt="Craft Beer Sortiment" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg" />
+            </FadeIn>
+            <FadeIn delay={120} className="col-span-2">
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-lg object-top" />
             </FadeIn>
           </div>
         </div>
@@ -436,30 +412,21 @@ export default function App() {
       <section className="bg-[#1a1005] text-white py-24 md:py-32 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Rezensionen</p>
+            <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Stimmen</p>
             <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-16 max-w-3xl">
-              "Die Stimmung kann man nicht erklären.<br />
-              <em className="text-caramel">Man muss sie erleben."</em>
+              "Die Stimmung kann man<br />nicht erklären.{' '}
+              <em className="text-caramel">Man muss<br />sie erleben."</em>
             </h2>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-5">
             {testimonials.map((t, i) => (
-              <FadeIn key={t.name} delay={i * 80}>
+              <FadeIn key={i} delay={i * 80}>
                 <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 hover:bg-white/8 transition-all duration-300 h-full flex flex-col">
                   <div className="text-caramel text-xl mb-6 tracking-wider">★★★★★</div>
                   <p className="font-display text-xl md:text-2xl leading-relaxed text-white/90 flex-1 tracking-tight">
                     "{t.text}"
                   </p>
-                  <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-caramel/30 flex items-center justify-center text-caramel font-bold font-display">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-white">{t.name}</p>
-                      <p className="text-white/40 text-xs mt-0.5">Google Rezension</p>
-                    </div>
-                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -476,10 +443,13 @@ export default function App() {
               alt="Wirt auf der Terrasse"
               className="rounded-3xl w-full h-[500px] md:h-[650px] object-cover shadow-2xl"
             />
-            <div className="absolute bottom-6 left-6 right-6 bg-cream/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-              <p className="font-display text-2xl font-bold text-bark">Verrückt genug,</p>
-              <p className="font-display text-2xl font-bold text-caramel">um besonders zu sein.</p>
-              <p className="text-bark/60 text-sm mt-2">Das Hoheneck, Engelberg ❤️</p>
+            <div className="absolute bottom-6 left-6 right-6 bg-cream/96 backdrop-blur-sm rounded-2xl p-6 shadow-xl flex items-center gap-5">
+              <img src={IMAGES.logoRound} alt="Logo" className="w-16 h-16 object-contain flex-shrink-0" />
+              <div>
+                <p className="font-display text-xl font-bold text-bark">Verrückt genug,</p>
+                <p className="font-display text-xl font-bold text-caramel">um besonders zu sein.</p>
+                <p className="text-bark/55 text-sm mt-1">Das Hoheneck · Engelberg ❤️</p>
+              </div>
             </div>
           </FadeIn>
 
@@ -490,13 +460,13 @@ export default function App() {
             </h2>
             <div className="space-y-5 text-bark/65 text-lg leading-relaxed">
               <p>
-                Das Hoheneck verbindet alpine Gemütlichkeit mit urbaner Energie. Seit Jahren Kultstatus in Engelberg – eine Bar, ein Café und ein Treffpunkt für Menschen, die gute Musik, ehrliche Drinks und echte Atmosphäre lieben.
+                Das Hoheneck verbindet alpine Gemütlichkeit mit urbaner Energie. Seit 2023 Kultstatus in Engelberg – eine Bar, ein Café und ein Treffpunkt für Menschen, die gute Musik, ehrliche Drinks und echte Atmosphäre lieben.
               </p>
               <p>
-                Unser historisches Steingewölbe im Keller, die eigenwillige Deko mit Disco-Kugeln und Vintage-Leuchten, der Flamingo auf dem Zapfhahn – alles hat seinen Grund, alles hat seine Geschichte.
+                Unser historisches Steingewölbe im Keller, die William-Morris-Tapete, Gitarren-Poster, Disco-Kugeln und der Flamingo auf dem Zapfhahn – alles hat seinen Grund, alles hat seine Geschichte.
               </p>
               <p>
-                Viele unserer Bands spielen seit Jahren bei uns und haben Kultstatus erreicht. Genau diese Mischung aus Tradition, Charakter und Offenheit macht das Hoheneck einzigartig.
+                Viele unserer Bands spielen seit der Eröffnung bei uns und haben Kultstatus erreicht. Genau diese Mischung aus Charakter und Offenheit macht das Hoheneck einzigartig.
               </p>
             </div>
 
@@ -513,7 +483,7 @@ export default function App() {
 
             <div className="flex gap-4 mt-8">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/das_verrueckte_cafe"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-bark/70 hover:text-caramel transition-colors font-medium"
@@ -521,7 +491,7 @@ export default function App() {
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
-                Instagram
+                @das_verrueckte_cafe
               </a>
             </div>
           </FadeIn>
@@ -532,9 +502,8 @@ export default function App() {
       <section id="reservierung" className="py-24 md:py-32 px-5 md:px-10 bg-warm/40">
         <div className="max-w-7xl mx-auto">
           <div className="bg-bark rounded-[40px] overflow-hidden relative">
-            {/* Background image overlay */}
             <div className="absolute inset-0 opacity-10">
-              <img src={IMAGES.barFull} alt="" className="w-full h-full object-cover" />
+              <img src={IMAGES.interior3} alt="" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-caramel/20 rounded-full blur-3xl" />
 
@@ -562,7 +531,15 @@ export default function App() {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-caramel mt-0.5">✉️</span>
-                    <p>info@hoheneck-engelberg.ch</p>
+                    <a href="mailto:info@verruecktescafe.ch" className="hover:text-caramel transition-colors">
+                      info@verruecktescafe.ch
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-caramel mt-0.5">📸</span>
+                    <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
+                      @das_verrueckte_cafe
+                    </a>
                   </div>
                 </div>
               </FadeIn>
@@ -630,24 +607,31 @@ export default function App() {
       </section>
 
       {/* ─── FOOTER ───────────────────────────────────────────── */}
-      <footer className="bg-bark text-white py-12 px-5 md:px-10">
+      <footer className="bg-bark text-white py-14 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-10 mb-10">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-caramel flex items-center justify-center font-display font-bold text-white text-lg">
-                  H
-                </div>
-                <div>
-                  <p className="font-display font-bold text-white">Das verrückte Café</p>
-                  <p className="text-white/40 text-xs">zum Hoheneck</p>
-                </div>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12 pb-12 border-b border-white/10">
+            <div className="flex items-center gap-5">
+              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain brightness-0 invert" />
+              <div>
+                <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
+                <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
+                <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023</p>
               </div>
-              <p className="text-white/50 text-sm leading-relaxed">
-                Engelbergs kultigstes Lokal für Live-Musik, Craft Beer und unvergessliche Nächte.
-              </p>
             </div>
+            <a
+              href="https://instagram.com/das_verrueckte_cafe"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 border border-white/20 rounded-full px-6 py-3 text-white/70 hover:text-white hover:border-caramel/50 transition-all duration-300 self-start md:self-auto"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              @das_verrueckte_cafe
+            </a>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
               <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Öffnungszeiten</p>
               <div className="space-y-2 text-white/60 text-sm">
@@ -656,23 +640,24 @@ export default function App() {
                 <p className="text-white/30">Di: geschlossen</p>
               </div>
             </div>
-
+            <div>
+              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Adresse</p>
+              <div className="space-y-1 text-white/60 text-sm">
+                <p>Dorfstrasse 4</p>
+                <p>6390 Engelberg, Schweiz</p>
+              </div>
+            </div>
             <div>
               <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Kontakt</p>
               <div className="space-y-2 text-white/60 text-sm">
-                <p>Dorfstrasse 4</p>
-                <p>6390 Engelberg, Schweiz</p>
-                <a href="https://instagram.com" className="flex items-center gap-2 text-white/60 hover:text-caramel transition-colors mt-3">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                  @dasverrucktecafe
+                <a href="mailto:info@verruecktescafe.ch" className="block hover:text-caramel transition-colors">
+                  info@verruecktescafe.ch
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/25 text-xs">
             <p>© {new Date().getFullYear()} Das verrückte Café zum Hoheneck · Engelberg, Schweiz</p>
             <p>Mit ❤️ aus den Alpen</p>
           </div>
