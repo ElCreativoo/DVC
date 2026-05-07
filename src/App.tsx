@@ -217,7 +217,7 @@ export default function App() {
               <img
                 src={IMAGES.logoText2}
                 alt="Das verrückte Café zum Hoheneck"
-                className="hidden sm:block h-32 md:h-40 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]"
+                className="hidden sm:block h-40 md:h-52 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6"
               />
             </div>
           </div>
