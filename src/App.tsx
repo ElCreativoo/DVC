@@ -161,16 +161,6 @@ export default function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full">
 
-          {/* Wordmark logo — full-width text logo above headline */}
-          <div className="mb-6 animate-fadeUp">
-            <img
-              src={IMAGES.logoText}
-              alt="Das verrückte Café zum Hoheneck"
-              className="h-16 md:h-24 object-contain object-left drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]"
-              style={{ filter: 'brightness(0) invert(1)' }}
-            />
-          </div>
-
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/12 backdrop-blur-sm text-white text-xs tracking-widest uppercase mb-6 animate-fadeUp" style={{ animationDelay: '80ms' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-caramel animate-pulse" />
