@@ -103,22 +103,16 @@ export default function App() {
           scrolled ? 'py-1' : 'py-3'
         }`}>
           <a href="#" className="flex items-center gap-2 group">
-            {/*
-              Logo ALWAYS black:
-              – hero (dark bg): cream pill background so black logo is visible; CSS bg = no flash
-              – scrolled (light nav): just the logo, bigger, with a warm drop-shadow
-            */}
-            <div className={`transition-all duration-500 flex-shrink-0 flex items-center justify-center ${
-              scrolled
-                ? 'w-20 h-20 drop-shadow-[0_2px_8px_rgba(43,30,20,0.18)]'
-                : 'w-14 h-14 rounded-full bg-cream/90 backdrop-blur-md p-2 shadow-lg ring-1 ring-white/20'
-            }`}>
-              <img
-                src={IMAGES.logoRound}
-                alt="Das verrückte Café zum Hoheneck"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            {/* No background/ring — white glow drop-shadow makes black logo readable on dark */}
+            <img
+              src={IMAGES.logoRound}
+              alt="Das verrückte Café zum Hoheneck"
+              className={`object-contain flex-shrink-0 transition-all duration-500 ${
+                scrolled
+                  ? 'w-20 h-20'
+                  : 'w-14 h-14 [filter:drop-shadow(0_0_6px_rgba(255,255,255,0.85))_drop-shadow(0_0_3px_rgba(255,255,255,0.7))]'
+              }`}
+            />
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -166,14 +160,11 @@ export default function App() {
 
         {/* TOP — logo anchors the hero visually below the navbar */}
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 w-full pt-28 md:pt-32 animate-fadeUp">
-          {/* Large logo in cream pill — always BLACK, no inversion, no flash */}
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-cream/92 backdrop-blur-sm p-3 shadow-2xl ring-2 ring-white/25">
-            <img
-              src={IMAGES.logoRound}
-              alt="Das verrückte Café zum Hoheneck"
-              className="w-full h-full object-contain"
-            />
-          </div>
+          <img
+            src={IMAGES.logoRound}
+            alt="Das verrückte Café zum Hoheneck"
+            className="w-24 h-24 md:w-32 md:h-32 object-contain [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.9))_drop-shadow(0_0_5px_rgba(255,255,255,0.75))]"
+          />
         </div>
 
         {/* BOTTOM — main hero content */}
