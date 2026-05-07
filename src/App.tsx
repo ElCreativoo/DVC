@@ -104,7 +104,11 @@ export default function App() {
       {/* When atBottom: slides to the bottom of viewport via translateY */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
-          scrolled || atBottom ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8' : 'bg-transparent'
+          atBottom
+            ? 'bg-cream border-t border-bark/10'
+            : scrolled
+              ? 'bg-cream/97 backdrop-blur-xl border-b border-bark/8'
+              : 'bg-transparent'
         }`}
         style={{ transform: atBottom ? 'translateY(calc(100vh - 100%))' : 'translateY(0)' }}
       >
@@ -117,7 +121,7 @@ export default function App() {
               src={IMAGES.logoRound}
               alt="Das verrückte Café zum Hoheneck"
               className={`object-contain flex-shrink-0 transition-all duration-500 ${
-                scrolled
+                scrolled || atBottom
                   ? 'w-20 h-20 opacity-100'
                   : 'w-0 h-0 opacity-0 pointer-events-none'
               }`}
