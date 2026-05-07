@@ -277,7 +277,7 @@ export default function App() {
                 <em className="text-caramel">Viel mehr.</em>
               </h2>
               <p className="text-white/50 text-lg max-w-sm md:text-right">
-                Jedes Detail ist darauf ausgelegt, dass du dich sofort willkommen fühlst.
+                Alles hier ist darauf ausgelegt, dass du dich sofort willkommen fühlst.
               </p>
             </div>
           </FadeIn>
@@ -301,8 +301,8 @@ export default function App() {
               <img src={IMAGES.interior1} alt="Innenraum Bar" className="w-full h-72 md:h-96 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-bark/75 via-bark/30 to-transparent" />
               <div className="absolute bottom-8 left-8 md:left-12">
-                <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight">Hier spielt die Musik.</p>
-                <p className="text-white/65 mt-2">Gute Musik · Live Bands · DJ Nächte · Après-Ski</p>
+                <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight">Wo die Nacht lebendig wird.</p>
+                <p className="text-white/65 mt-2">Jeden Abend ein bisschen Magie.</p>
               </div>
             </div>
           </FadeIn>
