@@ -261,7 +261,7 @@ export default function App() {
               <img src={IMAGES.wallpaper} alt="Atmosphäre" className="rounded-2xl w-full h-60 object-cover shadow-lg" />
               <img src={IMAGES.vault} alt="Gewölbekeller" className="rounded-2xl w-full h-60 object-cover shadow-lg mt-10" />
               <img src={IMAGES.porch} alt="Terrasse" className="rounded-2xl w-full h-48 object-cover shadow-lg" />
-              <img src={IMAGES.lantern} alt="Edison-Lampe" className="rounded-2xl w-full h-48 object-cover shadow-lg mt-6" />
+              <img src={IMAGES.disco2} alt="Disco-Helm & Craft Beer" className="rounded-2xl w-full h-48 object-cover object-center shadow-lg mt-6" />
             </div>
           </FadeIn>
         </div>
@@ -390,10 +390,6 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Feature image — last from Atmosphäre */}
-          <FadeIn delay={0} className="mt-4">
-            <img src={IMAGES.lantern} alt="Edison-Lampe" className="rounded-3xl w-full h-[340px] md:h-[440px] object-cover object-center hover:scale-[1.01] transition-transform duration-700 shadow-xl" />
-          </FadeIn>
         </div>
       </section>
 
