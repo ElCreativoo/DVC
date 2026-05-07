@@ -365,31 +365,35 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 3: 4 equal */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+          {/* Row 3: 3 equal */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
             <FadeIn delay={0}>
-              <img src={IMAGES.porch} alt="Gedeckte Terrasse" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={60}>
               <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
+            <FadeIn delay={60}>
               <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={180}>
+            <FadeIn delay={120}>
               <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 + 1/3 + 1/3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <FadeIn delay={0}>
-              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-64 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+          {/* Row 4: 2/3 + 1/3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <FadeIn delay={0} className="sm:col-span-2">
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60}>
+            <FadeIn delay={80}>
+              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+          </div>
+
+          {/* Row 5: 1/2 + 1/2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <FadeIn delay={0}>
               <img src={IMAGES.disco2} alt="Freefall Craft Beer" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
+            <FadeIn delay={60}>
               <img src={IMAGES.helmetGirl} alt="Disco-Helm" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
