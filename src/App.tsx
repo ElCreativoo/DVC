@@ -446,7 +446,7 @@ export default function App() {
                 Das Hoheneck verbindet alpine Gemütlichkeit mit urbaner Energie. Seit 2023 Kultstatus in Engelberg – eine Bar, ein Café und ein Treffpunkt für Menschen, die gute Musik, gutes Bier und echte Atmosphäre lieben.
               </p>
               <p>
-                Wir sind nicht ganz dicht – und genau das macht uns aus. Kreativität und Leidenschaft in jedem Detail: das Steingewölbe, die William-Morris-Tapete, der Flamingo auf dem Zapfhahn.
+                Kreativität und Leidenschaft in jedem Detail: das Steingewölbe, die William-Morris-Tapete, der Flamingo auf dem Zapfhahn.
               </p>
               <p>
                 Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese verrückte Mischung aus Charakter, Leidenschaft und Guter Musik macht das Hoheneck einzigartig.
