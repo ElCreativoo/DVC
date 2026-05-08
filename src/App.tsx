@@ -21,6 +21,7 @@ const IMAGES = {
   disco2:    '/images/img18.webp',  // Freefall bottle + disco helmet
   helmetGirl: '/images/img19.webp', // woman wearing disco helmet
   outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
+  terraceWide: '/images/img21.webp', // wide outdoor terrace with building
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -390,12 +391,10 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 5: terrace full width with apartments */}
-          <div>
-            <FadeIn delay={0}>
-              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-56 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-          </div>
+          {/* Row 5: wide outdoor terrace */}
+          <FadeIn delay={0}>
+            <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 md:h-80 object-cover object-top hover:scale-[1.01] transition-transform duration-700 shadow-md" />
+          </FadeIn>
 
         </div>
       </section>
