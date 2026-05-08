@@ -342,58 +342,58 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Row 1: 3 equal columns */}
+          {/* Row 1: owner tall + interior1 wide */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.owner} alt="Ruben, Inhaber" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.owner} alt="Ruben, Inhaber" className="rounded-3xl w-full h-72 sm:h-96 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60}>
-              <img src={IMAGES.interior1} alt="Innenraum" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.vault} alt="Steingewölbe" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={60} className="sm:col-span-2">
+              <img src={IMAGES.interior1} alt="Innenraum" className="rounded-3xl w-full h-72 sm:h-96 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 2: 2/3 + 1/3 */}
+          {/* Row 2: interior2 wide + terraceWide portrait */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0} className="sm:col-span-2">
               <img src={IMAGES.interior2} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80}>
-              <img src={IMAGES.wallpaper} alt="Tapete & Atmosphäre" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 3: 3 equal */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+          {/* Row 3: 4 detail shots */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.vault} alt="Steingewölbe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={120}>
+              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={180}>
               <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 4: outdoor2 + beers + helmetGirl + terrace wide */}
+          {/* Row 4: wallpaper wide + outdoor2 + helmetGirl */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <FadeIn delay={0}>
-              <img src={IMAGES.outdoor2} alt="Aussenbereich rotes Sofa" className="rounded-3xl w-full h-72 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={0} className="sm:col-span-2">
+              <img src={IMAGES.wallpaper} alt="William Morris Tapete" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60}>
-              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-72 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="rounded-3xl w-full h-72 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={80}>
+              <div className="flex flex-col gap-3 h-64">
+                <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full flex-1 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+                <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="rounded-3xl w-full flex-1 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              </div>
             </FadeIn>
           </div>
 
-          {/* Row 5: wide outdoor terrace */}
+          {/* Row 5: outdoor2 full width closer */}
           <FadeIn delay={0}>
-            <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 md:h-80 object-cover object-top hover:scale-[1.01] transition-transform duration-700 shadow-md" />
+            <img src={IMAGES.outdoor2} alt="Aussenbereich" className="rounded-3xl w-full h-64 md:h-80 object-cover object-center hover:scale-[1.01] transition-transform duration-700 shadow-md" />
           </FadeIn>
 
         </div>
