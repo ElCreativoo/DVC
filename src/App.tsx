@@ -615,10 +615,9 @@ export default function App() {
                 <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023 ❤️</p>
               </div>
             </div>
-            <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-3 border border-white/20 rounded-full px-6 py-3 text-white/70 hover:text-white hover:border-caramel/60 transition-all duration-300 self-start md:self-auto">
-              <IgIcon />
-              @das_verrueckte_cafe
+            <a href="#reservierung"
+              className="inline-flex items-center gap-3 bg-caramel text-white rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 shadow-lg shadow-caramel/20 self-start md:self-auto">
+              Tisch reservieren →
             </a>
           </div>
 
