@@ -273,7 +273,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Erlebnis</p>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight max-w-2xl">
                 Mehr als eine Bar.<br />
                 <em className="text-caramel">Viel mehr.</em>
@@ -284,7 +284,7 @@ export default function App() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-16">
+          <div className="grid md:grid-cols-2 gap-5 mb-12">
             {highlights.map((h, i) => (
               <FadeIn key={h.title} delay={i * 80}>
                 <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-300 group hover:-translate-y-1 h-full">
@@ -299,8 +299,8 @@ export default function App() {
           </div>
 
           <FadeIn>
-            <div className="relative rounded-3xl overflow-hidden mb-16">
-              <img src={IMAGES.interior1} alt="Innenraum Bar" className="w-full h-72 md:h-96 object-cover" />
+            <div className="relative rounded-3xl overflow-hidden mb-12">
+              <img src={IMAGES.barFull} alt="Bar Abend" className="w-full h-72 md:h-96 object-cover object-center" />
               <div className="absolute inset-0 bg-gradient-to-r from-bark/75 via-bark/30 to-transparent" />
               <div className="absolute bottom-8 left-8 md:left-12">
                 <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight">Hier spielt die Musik.</p>
@@ -324,8 +324,8 @@ export default function App() {
               </div>
               <div className="h-px md:h-12 w-full md:w-px bg-caramel/25" />
               <a href="#reservierung"
-                className="bg-caramel text-white px-7 py-4 rounded-2xl text-sm font-semibold tracking-wide hover:bg-amber-500 transition-colors whitespace-nowrap text-center">
-                Tisch reservieren
+                className="bg-caramel text-white px-7 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 hover:scale-105 transition-all duration-300 whitespace-nowrap text-center shadow-lg shadow-caramel/25">
+                Tisch reservieren →
               </a>
             </div>
           </FadeIn>
@@ -449,7 +449,7 @@ export default function App() {
                 Kreativität und Leidenschaft in jedem Detail: das Steingewölbe, die William-Morris-Tapete, der Flamingo auf dem Zapfhahn.
               </p>
               <p>
-                Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese verrückte Mischung aus Charakter, Leidenschaft und Guter Musik macht das Hoheneck einzigartig.
+                Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese verrückte Mischung aus Charakter, Leidenschaft und guter Musik macht das Hoheneck einzigartig.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-10">
