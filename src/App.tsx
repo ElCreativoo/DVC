@@ -376,17 +376,17 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: terrace wide + beers + helmetGirl */}
+          {/* Row 4: terrace + beers + helmetGirl equal */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <FadeIn delay={0} className="sm:col-span-2">
-              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={0}>
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-72 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={80}>
-              <div className="flex flex-col gap-3 h-64">
-                <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full flex-1 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-                <div className="rounded-3xl overflow-hidden flex-1 bg-[#ede8df] shadow-md hover:scale-[1.02] transition-transform duration-500">
-                  <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="w-full h-full object-contain" />
-                </div>
+            <FadeIn delay={60}>
+              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-72 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={120}>
+              <div className="rounded-3xl overflow-hidden h-72 bg-[#ede8df] shadow-md hover:scale-[1.02] transition-transform duration-500">
+                <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="w-full h-full object-contain" />
               </div>
             </FadeIn>
           </div>
