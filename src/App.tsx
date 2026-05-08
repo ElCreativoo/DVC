@@ -186,7 +186,7 @@ export default function App() {
             </h1>
 
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-xl mb-10 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)] animate-fadeUp" style={{ animationDelay: '200ms' }}>
-              Ein verrücktes Café, in dem erstaunlich wenig Kaffee getrunken wird – dafür umso mehr Craft Beer, Live-Musik und unvergessliche Nächte.
+              Ein verrücktes Café, in dem kaum Kaffee getrunken wird – dafür Craft Beer vom Fass, Live-Musik und Nächte, die bleiben.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
