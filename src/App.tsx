@@ -606,7 +606,7 @@ export default function App() {
       <footer className="bg-bark text-white py-14 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-5 mb-12 pb-12 border-b border-white/10">
-            <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
+            <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0" />
             <div>
               <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
               <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
