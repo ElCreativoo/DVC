@@ -20,6 +20,7 @@ const IMAGES = {
   corner:    '/images/img17.webp',
   disco2:    '/images/img18.webp',  // Freefall bottle + disco helmet
   helmetGirl: '/images/img19.webp', // woman wearing disco helmet
+  outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -379,16 +380,23 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: terrace + beers + helmetGirl equal */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {/* Row 4: outdoor2 + beers + helmetGirl + terrace wide */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-72 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.outdoor2} alt="Aussenbereich rotes Sofa" className="rounded-3xl w-full h-72 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
               <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-72 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={120}>
               <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="rounded-3xl w-full h-72 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+          </div>
+
+          {/* Row 5: terrace full width with apartments */}
+          <div>
+            <FadeIn delay={0}>
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-56 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
