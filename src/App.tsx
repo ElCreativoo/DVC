@@ -247,7 +247,7 @@ export default function App() {
               Wohnzimmer.
             </h2>
             <p className="text-bark/65 text-lg leading-relaxed mb-6">
-              Das verrückte Café ist kein gewöhnliches Lokal — das stimmt, wir sind nicht ganz dicht. Hier treffen sich Locals, Musikliebhaber, Reisende und Nachtschwärmer in einem Raum voller Kreativität und echter Leidenschaft.
+              Das verrückte Café ist kein gewöhnliches Lokal — das stimmt, wir sind nicht ganz dicht. Hier treffen sich Locals, Musikliebhaber, Reisende und Nachtschwärmer in einem Raum, der seinesgleichen sucht.
             </p>
             <p className="text-bark/65 text-lg leading-relaxed mb-10">
               Disco-Kugeln neben Weinflaschen-Lampenschirmen, William-Morris-Tapete neben Gitarren-Postern, ein Flamingo auf dem Zapfhahn – jedes Detail hat seinen Grund, jede Ecke ihre Geschichte.
@@ -446,10 +446,10 @@ export default function App() {
                 Das Hoheneck verbindet alpine Gemütlichkeit mit urbaner Energie. Seit 2023 Kultstatus in Engelberg – eine Bar, ein Café und ein Treffpunkt für Menschen, die gute Musik, gutes Bier und echte Atmosphäre lieben.
               </p>
               <p>
-                Kreativität und Leidenschaft in jedem Detail: das Steingewölbe, die William-Morris-Tapete, der Flamingo auf dem Zapfhahn.
+                Vom historischen Steingewölbe bis zum letzten Deko-Stück: hier wurde nichts dem Zufall überlassen.
               </p>
               <p>
-                Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese verrückte Mischung aus Charakter, Leidenschaft und guter Musik macht das Hoheneck einzigartig.
+                Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese Mischung aus Geschichte, Hingabe und echter Energie macht das Hoheneck zu etwas Besonderem.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-10">
