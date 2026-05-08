@@ -610,20 +610,13 @@ export default function App() {
       {/* ─── FOOTER ───────────────────────────────────────────── */}
       <footer className="bg-bark text-white py-14 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12 pb-12 border-b border-white/10">
-            <div className="flex items-center gap-5">
-              {/* Footer: dark bg → invert logo to white, no wrapper div needed */}
-              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
-              <div>
-                <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
-                <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
-                <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023 ❤️</p>
-              </div>
+          <div className="flex items-center gap-5 mb-12 pb-12 border-b border-white/10">
+            <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
+            <div>
+              <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
+              <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
+              <p className="text-caramel text-xs mt-1 tracking-widest uppercase">ESTD 2023 ❤️</p>
             </div>
-            <a href="#reservierung"
-              className="inline-flex items-center gap-3 bg-caramel text-white rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 shadow-lg shadow-caramel/20 self-start md:self-auto">
-              Tisch reservieren →
-            </a>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 mb-10">
