@@ -364,18 +364,15 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 3: 4 equal */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+          {/* Row 3: 3 equal */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.porch} alt="Gedeckte Terrasse" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={60}>
               <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
+            <FadeIn delay={60}>
               <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={180}>
+            <FadeIn delay={120}>
               <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
