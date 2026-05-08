@@ -235,7 +235,7 @@ export default function App() {
       </section>
 
       {/* ─── ATMOSPHÄRE ───────────────────────────────────────── */}
-      <section id="atmosphare" className="py-24 md:py-32 px-5 md:px-10">
+      <section id="atmosphare" className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Atmosphäre</p>
@@ -267,7 +267,7 @@ export default function App() {
       </section>
 
       {/* ─── ERLEBNIS / HIGHLIGHTS ────────────────────────────── */}
-      <section id="erlebnis" className="bg-bark text-cream py-24 md:py-32 px-5 md:px-10">
+      <section id="erlebnis" className="bg-bark text-cream py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Erlebnis</p>
@@ -331,7 +331,7 @@ export default function App() {
       </section>
 
       {/* ─── GALERIE ──────────────────────────────────────────── */}
-      <section id="galerie" className="py-24 md:py-32 px-5 md:px-10">
+      <section id="galerie" className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Galerie</p>
@@ -341,7 +341,7 @@ export default function App() {
           </FadeIn>
 
           {/* Row 1: 3 equal columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.owner} alt="Ruben, Inhaber" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
@@ -354,7 +354,7 @@ export default function App() {
           </div>
 
           {/* Row 2: 2/3 + 1/3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0} className="sm:col-span-2">
               <img src={IMAGES.interior2} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
@@ -364,7 +364,7 @@ export default function App() {
           </div>
 
           {/* Row 3: 3 equal */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
@@ -376,21 +376,17 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: 2/3 + 1/3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          {/* Row 4: terrace wide + beers + helmetGirl */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <FadeIn delay={0} className="sm:col-span-2">
-              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terrace} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80}>
-              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-          </div>
-
-          {/* Row 5: helmetGirl centred, full figure */}
-          <div className="flex justify-center">
-            <FadeIn delay={0} className="w-full sm:w-1/3">
-              <div className="rounded-3xl overflow-hidden shadow-md bg-[#f5f0e8] hover:scale-[1.02] transition-transform duration-500">
-                <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="w-full object-contain object-[center_60%]" />
+              <div className="flex flex-col gap-3 h-64">
+                <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full flex-1 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+                <div className="rounded-3xl overflow-hidden flex-1 bg-[#ede8df] shadow-md hover:scale-[1.02] transition-transform duration-500">
+                  <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="w-full h-full object-contain" />
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -399,7 +395,7 @@ export default function App() {
       </section>
 
       {/* ─── REZENSIONEN ──────────────────────────────────────── */}
-      <section className="bg-[#1a1005] text-white py-14 md:py-20 px-5 md:px-10">
+      <section className="bg-[#1a1005] text-white py-12 md:py-16 px-5 md:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="flex items-baseline gap-4 mb-8">
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold">Vibes</p>
@@ -421,7 +417,7 @@ export default function App() {
       </section>
 
       {/* ─── ÜBER UNS ─────────────────────────────────────────── */}
-      <section id="uber-uns" className="py-24 md:py-32 px-5 md:px-10">
+      <section id="uber-uns" className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn className="relative order-2 lg:order-1">
             <img
@@ -521,7 +517,7 @@ export default function App() {
       </section>
 
       {/* ─── RESERVIERUNG ─────────────────────────────────────── */}
-      <section id="reservierung" className="py-24 md:py-32 px-5 md:px-10 bg-warm/40">
+      <section id="reservierung" className="py-20 md:py-28 px-5 md:px-10 bg-warm/40">
         <div className="max-w-7xl mx-auto">
           <div className="bg-bark rounded-[40px] overflow-hidden relative">
             <div className="absolute inset-0 opacity-10">
@@ -612,7 +608,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12 pb-12 border-b border-white/10">
             <div className="flex items-center gap-5">
               {/* Footer: dark bg → invert logo to white, no wrapper div needed */}
-              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0" />
+              <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain flex-shrink-0 [filter:invert(1)]" />
               <div>
                 <p className="font-display text-xl font-bold text-white leading-tight">Das verrückte Café</p>
                 <p className="text-white/40 text-sm">zum Hoheneck · Engelberg</p>
