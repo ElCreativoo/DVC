@@ -22,6 +22,7 @@ const IMAGES = {
   helmetGirl: '/images/img19.webp', // woman wearing disco helmet
   outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
   terraceWide: '/images/img21.webp', // wide outdoor terrace with building
+  musician:    '/images/img22.jpg',  // b&w guitarist performing live
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -317,11 +318,12 @@ export default function App() {
 
           <FadeIn>
             <div className="relative rounded-3xl overflow-hidden mb-12">
-              <img src={IMAGES.interior1} alt="Innenraum Bar" className="w-full h-72 md:h-96 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-bark/75 via-bark/30 to-transparent" />
-              <div className="absolute bottom-8 left-8 md:left-12">
-                <p className="font-display text-white text-2xl md:text-4xl font-bold leading-tight">Hier spielt die Musik.</p>
-                <p className="text-white/65 mt-2">Jeden Abend ein bisschen Magie.</p>
+              <img src={IMAGES.musician} alt="Live Musik im verrückten Café" className="w-full h-80 md:h-[480px] object-cover object-[center_25%]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bark/90 via-bark/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-bark/40 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
+                <p className="font-display text-white text-3xl md:text-5xl font-bold leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">Hier spielt die Musik.</p>
+                <p className="text-white/70 mt-2 text-base md:text-lg">Jeden Abend ein bisschen Magie.</p>
               </div>
             </div>
           </FadeIn>
