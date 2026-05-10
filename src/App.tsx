@@ -79,6 +79,13 @@ function FadeIn({ children, delay = 0, className = '' }: {
   )
 }
 
+// ── Instagram post URLs – update these with the 6 latest post URLs ──
+// Format: https://www.instagram.com/p/POST_ID/
+const IG_POSTS: string[] = [
+  // Paste real post URLs here, e.g.:
+  // 'https://www.instagram.com/p/ABC123/',
+]
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -91,6 +98,24 @@ export default function App() {
     }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Load Instagram embed script and process embeds
+  useEffect(() => {
+    if (IG_POSTS.length === 0) return
+    const load = () => {
+      if ((window as any).instgrm) {
+        ;(window as any).instgrm.Embeds.process()
+      } else {
+        const s = document.createElement('script')
+        s.id = 'ig-embed-script'
+        s.src = 'https://www.instagram.com/embed.js'
+        s.async = true
+        s.onload = () => (window as any).instgrm?.Embeds.process()
+        document.body.appendChild(s)
+      }
+    }
+    load()
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -126,7 +151,7 @@ export default function App() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} className={`transition-colors hover:text-caramel ${scrolled ? 'text-bark/70' : 'text-white/80'}`}>
                 {l}
               </a>
@@ -152,7 +177,7 @@ export default function App() {
 
         <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Reservieren','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
@@ -180,13 +205,13 @@ export default function App() {
             </div>
 
             <h1 className="font-display text-white text-5xl md:text-7xl lg:text-[82px] font-bold leading-[0.93] tracking-tight mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)] animate-fadeUp" style={{ animationDelay: '120ms' }}>
-              Craft Beer.<br />
-              Live Musik.<br />
+              Augustiner<br />
+              vom Fass.<br />
               <em className="not-italic" style={{ color: '#e8a455' }}>Echter Vibe.</em>
             </h1>
 
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-xl mb-10 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)] animate-fadeUp" style={{ animationDelay: '200ms' }}>
-              Ein verrücktes Café, in dem kaum Kaffee getrunken wird – dafür Craft Beer vom Fass, Live-Musik und Nächte, die bleiben.
+              Ein verrücktes Café, in dem kaum Kaffee getrunken wird – dafür Augustiner und Appenzeller frisch vom Fass, Live-Musik und Nächte, die bleiben.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
@@ -494,7 +519,7 @@ export default function App() {
                   </h2>
 
                   <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-                    Neue Veranstaltungen, Live-Musik-Abende, Craft-Beer-Neuheiten und Überraschungen — wer folgt, verpasst nichts. Immer aktuell, immer mittendrin.
+                    Neue Veranstaltungen, Live-Musik-Abende, besondere Biermomente und Überraschungen — wer folgt, verpasst nichts. Immer aktuell, immer mittendrin.
                   </p>
 
                   <a
@@ -510,6 +535,87 @@ export default function App() {
               </FadeIn>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── AKTUELLES / INSTAGRAM FEED ───────────────────────── */}
+      <section id="aktuelles" className="py-20 md:py-28 px-5 md:px-10 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+              <div>
+                <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-3">Aktuelles</p>
+                <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight tracking-tight text-bark">
+                  Was gerade läuft.
+                </h2>
+              </div>
+              <a
+                href="https://instagram.com/das_verrueckte_cafe"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-bark/60 hover:text-caramel transition-colors text-sm font-semibold group"
+              >
+                <IgIcon className="w-5 h-5" />
+                @das_verrueckte_cafe
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </FadeIn>
+
+          {IG_POSTS.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {IG_POSTS.map((url, i) => (
+                <FadeIn key={url} delay={i * 80}>
+                  <div className="rounded-3xl overflow-hidden shadow-md bg-warm/40">
+                    <blockquote
+                      className="instagram-media"
+                      data-instgrm-permalink={url}
+                      data-instgrm-version="14"
+                      style={{ background: '#FFF', border: 0, borderRadius: '24px', margin: 0, maxWidth: '100%', minWidth: '280px', padding: 0, width: '100%' }}
+                    />
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          ) : (
+            /* ── shown until post URLs are added ── */
+            <FadeIn>
+              <div className="rounded-3xl bg-warm/50 border border-bark/8 p-12 md:p-20 flex flex-col items-center gap-6 text-center">
+                <div className="w-20 h-20 rounded-full bg-bark/8 flex items-center justify-center">
+                  <IgIcon className="w-9 h-9 text-bark/40" />
+                </div>
+                <div>
+                  <p className="font-display text-2xl font-bold text-bark mb-2">Immer auf dem Laufenden</p>
+                  <p className="text-bark/50 text-sm max-w-xs mx-auto leading-relaxed">
+                    Live-Musik, Abende mit Stammgästen, besondere Biermomente — alles auf Instagram.
+                  </p>
+                </div>
+                <a
+                  href="https://instagram.com/das_verrueckte_cafe"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-bark text-cream px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-caramel transition-all duration-300 hover:scale-105"
+                >
+                  <IgIcon className="w-4 h-4" />
+                  Jetzt folgen
+                </a>
+              </div>
+            </FadeIn>
+          )}
+
+          <FadeIn delay={200}>
+            <div className="mt-10 text-center">
+              <a
+                href="https://instagram.com/das_verrueckte_cafe"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 bg-bark text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-caramel transition-all duration-300 hover:scale-105"
+              >
+                <IgIcon className="w-5 h-5" />
+                Alle Posts auf Instagram
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
