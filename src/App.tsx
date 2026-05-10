@@ -79,12 +79,11 @@ function FadeIn({ children, delay = 0, className = '' }: {
   )
 }
 
-// ── Instagram post URLs – update these with the 6 latest post URLs ──
-// Format: https://www.instagram.com/p/POST_ID/
-const IG_POSTS: string[] = [
-  // Paste real post URLs here, e.g.:
-  // 'https://www.instagram.com/p/ABC123/',
-]
+// ── Behold.so Feed-ID hier einfügen (kostenlos auf behold.so) ──
+// 1. behold.so → Account erstellen → Instagram verbinden
+// 2. Feed erstellen (Typ: Widget, 3 Posts, Grid 3 Spalten)
+// 3. Feed-ID hier eintragen, z.B.: 'AbCdEfGhIjKlMnOp12345678'
+const BEHOLD_FEED_ID = ''
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -100,22 +99,15 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Load Instagram embed script and process embeds
+  // Load Behold widget script when feed ID is set
   useEffect(() => {
-    if (IG_POSTS.length === 0) return
-    const load = () => {
-      if ((window as any).instgrm) {
-        ;(window as any).instgrm.Embeds.process()
-      } else {
-        const s = document.createElement('script')
-        s.id = 'ig-embed-script'
-        s.src = 'https://www.instagram.com/embed.js'
-        s.async = true
-        s.onload = () => (window as any).instgrm?.Embeds.process()
-        document.body.appendChild(s)
-      }
-    }
-    load()
+    if (!BEHOLD_FEED_ID) return
+    if (document.getElementById('behold-script')) return
+    const s = document.createElement('script')
+    s.id = 'behold-script'
+    s.type = 'module'
+    s.src = 'https://w.behold.so/widget.js'
+    document.head.appendChild(s)
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -562,23 +554,14 @@ export default function App() {
             </div>
           </FadeIn>
 
-          {IG_POSTS.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {IG_POSTS.map((url, i) => (
-                <FadeIn key={url} delay={i * 80}>
-                  <div className="rounded-3xl overflow-hidden shadow-md bg-warm/40">
-                    <blockquote
-                      className="instagram-media"
-                      data-instgrm-permalink={url}
-                      data-instgrm-version="14"
-                      style={{ background: '#FFF', border: 0, borderRadius: '24px', margin: 0, maxWidth: '100%', minWidth: '280px', padding: 0, width: '100%' }}
-                    />
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+          {BEHOLD_FEED_ID ? (
+            /* ── Live Instagram feed via Behold.so ── */
+            <FadeIn>
+              {/* @ts-ignore */}
+              <behold-widget feed-id={BEHOLD_FEED_ID} />
+            </FadeIn>
           ) : (
-            /* ── shown until post URLs are added ── */
+            /* ── Platzhalter bis Feed-ID gesetzt wird ── */
             <FadeIn>
               <div className="rounded-3xl bg-warm/50 border border-bark/8 p-12 md:p-20 flex flex-col items-center gap-6 text-center">
                 <div className="w-20 h-20 rounded-full bg-bark/8 flex items-center justify-center">
