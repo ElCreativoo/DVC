@@ -35,10 +35,10 @@ const testimonials = [
 ]
 
 const highlights = [
-  { emoji: '🎸', title: 'Live Musik & DJ Nächte', desc: 'Legendäre Live-Bands, kultige DJ-Sets und echte Après-Ski Energie bis spät in die Nacht.' },
-  { emoji: '🍺', title: 'Craft Beer & Drinks', desc: 'Premium Cocktails, kaltes Augustiner vom Hahn und Locher Craft Beer in einzigartigen Sorten.' },
+  { emoji: '🎸', title: 'Live Musik & Karaoke', desc: 'Lokale Musiker/innen, Duos und Trios – plus legendäre Wunschkonzert- und Karaoke-Abende bis spät in die Nacht.' },
+  { emoji: '🍺', title: 'Besondere Bierauswahl', desc: 'Augustiner und Appenzeller frisch vom Fass – das verrückte Café ist bekannt für das beste Feierabendbier im Dorf.' },
   { emoji: '🏔️', title: 'Gemütlicher Gewölbekeller', desc: 'Ruhige Ecken im historischen Steingewölbe – warm, einzigartig und zum Wohlfühlen gemacht.' },
-  { emoji: '🍽️', title: 'Kreative Küche', desc: 'Frische Zutaten, regionale Produkte und ehrliches Food mit modernem Twist.' },
+  { emoji: '🥨', title: 'Apéro & Snackbar', desc: 'Kreatives Aperoangebot und feine Snacks – frisch, unkompliziert und perfekt zum Feierabendbier.' },
 ]
 
 function IgIcon({ className = 'w-5 h-5' }: { className?: string }) {
@@ -126,7 +126,7 @@ export default function App() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} className={`transition-colors hover:text-caramel ${scrolled ? 'text-bark/70' : 'text-white/80'}`}>
                 {l}
               </a>
@@ -365,19 +365,16 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 3: 4 detail shots */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+          {/* Row 3: 3 detail shots */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={120}>
-              <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={180}>
-              <img src={IMAGES.helmetGirl} alt="Frau mit Disco-Helm" className="rounded-3xl w-full h-52 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -439,17 +436,17 @@ export default function App() {
           <FadeIn delay={150} className="order-1 lg:order-2">
             <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Über uns</p>
             <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-8">
-              Ein Ort mit<br />echtem Charakter.
+              Ein Ort mit echtem<br />Charakter und Herz.
             </h2>
             <div className="space-y-5 text-bark/65 text-lg leading-relaxed">
               <p>
                 Das Hoheneck verbindet alpine Gemütlichkeit mit urbaner Energie. Seit 2023 Kultstatus in Engelberg – eine Bar, ein Café und ein Treffpunkt für Menschen, die gute Musik, gutes Bier und echte Atmosphäre lieben.
               </p>
               <p>
-                Vom historischen Steingewölbe bis zum letzten Deko-Stück: hier wurde nichts dem Zufall überlassen.
+                Vom historischen Steingewölbe bis zu den handgefertigten Tischen – fast jedes Möbelstück im Café ist ein Stück Kunsthandwerk und trägt seinen eigenen Charakter.
               </p>
               <p>
-                Viele unserer Bands spielen seit der Eröffnung bei uns. Genau diese Mischung aus Geschichte, Hingabe und echter Energie macht das Hoheneck zu etwas Besonderem.
+                Unsere Musiker/innen, Duos und Trios spielen seit der Eröffnung bei uns. Genau diese Mischung aus Geschichte, Hingabe und echter Energie macht das Hoheneck zu etwas Besonderem.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-10">
@@ -527,12 +524,12 @@ export default function App() {
 
             <div className="relative z-10 p-8 md:p-16 grid lg:grid-cols-2 gap-14 items-start">
               <FadeIn>
-                <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Reservierung</p>
+                <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Gruppenreservation</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white mb-6">
                   Dein Abend<br />beginnt hier.
                 </h2>
                 <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-sm">
-                  Reserviere deinen Tisch für Drinks, Gute Musik oder den perfekten verrückten Abend.
+                  Reserviere deinen Platz – ob für Drinks, Live-Musik oder den perfekten Gruppenabend. Für Gruppen bieten wir grossartige Menüs und persönliche Betreuung.
                 </p>
                 <div className="space-y-4 text-white/70">
                   <div className="flex items-start gap-3">
@@ -547,9 +544,9 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="text-caramel mt-0.5">✉️</span>
-                    <a href="mailto:info@verruecktescafe.ch" className="hover:text-caramel transition-colors">
-                      info@verruecktescafe.ch
+                    <span className="text-caramel mt-0.5">💬</span>
+                    <a href="https://wa.me/41XXXXXXXXX" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
+                      WhatsApp schreiben
                     </a>
                   </div>
                   <div className="flex items-start gap-3">
@@ -576,7 +573,7 @@ export default function App() {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
-                      <h3 className="font-display text-2xl font-bold text-bark mb-6">Tisch anfragen</h3>
+                      <h3 className="font-display text-2xl font-bold text-bark mb-6">Gruppenreservation anfragen</h3>
                       <input type="text" placeholder="Dein Name *" required
                         value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-warm/50 border border-bark/10 rounded-2xl px-5 py-4 text-bark placeholder-bark/40 outline-none focus:ring-2 focus:ring-caramel/30 focus:border-caramel/50 transition-all" />
@@ -633,8 +630,8 @@ export default function App() {
             <div>
               <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Kontakt</p>
               <div className="space-y-3 text-white/60 text-sm">
-                <a href="mailto:info@verruecktescafe.ch" className="block hover:text-caramel transition-colors">
-                  info@verruecktescafe.ch
+                <a href="https://wa.me/41XXXXXXXXX" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-caramel transition-colors">
+                  💬 WhatsApp schreiben
                 </a>
                 <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 hover:text-caramel transition-colors">
