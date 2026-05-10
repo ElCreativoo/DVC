@@ -499,8 +499,6 @@ export default function App() {
               <FadeIn>
                 <div className="max-w-2xl">
                   <div className="flex items-center gap-3 mb-6">
-                    {/* Logo on dark overlay — invert to white */}
-                    <img src={IMAGES.logoRound} alt="" className="w-10 h-10 object-contain flex-shrink-0 [filter:invert(1)]" />
                     <IgIcon className="w-6 h-6 text-white/60" />
                     <span className="text-white/70 text-sm font-medium tracking-wide">@das_verrueckte_cafe</span>
                   </div>
