@@ -341,11 +341,6 @@ export default function App() {
                 <p className="font-display text-2xl md:text-3xl font-bold">Dorfstrasse 4</p>
                 <p className="text-white/60 mt-1">6390 Engelberg, Schweiz</p>
               </div>
-              <div className="h-px md:h-12 w-full md:w-px bg-caramel/25" />
-              <a href="#reservierung"
-                className="bg-caramel text-white px-7 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 hover:scale-105 transition-all duration-300 whitespace-nowrap text-center shadow-lg shadow-caramel/25">
-                Tisch reservieren →
-              </a>
             </div>
           </FadeIn>
         </div>
