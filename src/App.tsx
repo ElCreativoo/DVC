@@ -529,7 +529,7 @@ export default function App() {
                   Dein Abend<br />beginnt hier.
                 </h2>
                 <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-sm">
-                  Reserviere deinen Platz – ob für Drinks, Live-Musik oder den perfekten Gruppenabend. Für Gruppen bieten wir grossartige Menüs und persönliche Betreuung.
+                  Gruppenreservationen ab 8 Personen – ausschliesslich via WhatsApp. Wir bieten grossartige Menüs und persönliche Betreuung für unvergessliche Gruppenabende.
                 </p>
                 <div className="space-y-4 text-white/70">
                   <div className="flex items-start gap-3">
@@ -560,38 +560,25 @@ export default function App() {
               </FadeIn>
 
               <FadeIn delay={150}>
-                <div className="bg-cream rounded-3xl p-8 shadow-2xl">
-                  {submitted ? (
-                    <div className="text-center py-8">
-                      <div className="text-4xl mb-4">🎉</div>
-                      <h3 className="font-display text-2xl font-bold text-bark mb-2">Anfrage gesendet!</h3>
-                      <p className="text-bark/60">Wir melden uns so schnell wie möglich bei dir.</p>
-                      <button onClick={() => setSubmitted(false)}
-                        className="mt-6 text-caramel font-medium hover:underline text-sm">
-                        Neue Anfrage
-                      </button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <h3 className="font-display text-2xl font-bold text-bark mb-6">Gruppenreservation anfragen</h3>
-                      <input type="text" placeholder="Dein Name *" required
-                        value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-warm/50 border border-bark/10 rounded-2xl px-5 py-4 text-bark placeholder-bark/40 outline-none focus:ring-2 focus:ring-caramel/30 focus:border-caramel/50 transition-all" />
-                      <input type="email" placeholder="E-Mail *" required
-                        value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-warm/50 border border-bark/10 rounded-2xl px-5 py-4 text-bark placeholder-bark/40 outline-none focus:ring-2 focus:ring-caramel/30 focus:border-caramel/50 transition-all" />
-                      <input type="text" placeholder="Datum & Uhrzeit"
-                        value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="w-full bg-warm/50 border border-bark/10 rounded-2xl px-5 py-4 text-bark placeholder-bark/40 outline-none focus:ring-2 focus:ring-caramel/30 focus:border-caramel/50 transition-all" />
-                      <textarea placeholder="Nachricht (Personenanzahl, Anlass...)" rows={4}
-                        value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-warm/50 border border-bark/10 rounded-2xl px-5 py-4 text-bark placeholder-bark/40 outline-none focus:ring-2 focus:ring-caramel/30 focus:border-caramel/50 transition-all resize-none" />
-                      <button type="submit"
-                        className="w-full bg-bark text-cream py-4 rounded-2xl text-sm font-semibold tracking-wide hover:bg-caramel transition-colors duration-300 hover:scale-[1.01] active:scale-[0.99]">
-                        Anfrage senden →
-                      </button>
-                    </form>
-                  )}
+                <div className="bg-cream rounded-3xl p-10 shadow-2xl flex flex-col items-center text-center gap-6">
+                  <div className="w-20 h-20 rounded-full bg-[#25D366]/10 flex items-center justify-center text-4xl">
+                    💬
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-bold text-bark mb-3">Gruppenreservation anfragen</h3>
+                    <p className="text-bark/60 text-sm leading-relaxed max-w-xs mx-auto">
+                      Schreib uns direkt auf WhatsApp – wir antworten schnell und helfen dir, den perfekten Abend für deine Gruppe zu planen.
+                    </p>
+                  </div>
+                  <a
+                    href="https://wa.me/41XXXXXXXXX"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full bg-[#25D366] text-white py-4 rounded-2xl text-sm font-semibold tracking-wide hover:bg-[#1ebe5d] transition-colors duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+                  >
+                    <span>Auf WhatsApp schreiben →</span>
+                  </a>
+                  <p className="text-bark/30 text-xs">Nur für Gruppen ab 8 Personen</p>
                 </div>
               </FadeIn>
             </div>
