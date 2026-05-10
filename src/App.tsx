@@ -341,8 +341,8 @@ export default function App() {
                 <p className="font-display text-2xl md:text-3xl font-bold">Dorfstrasse 4</p>
                 <p className="text-white/60 mt-1">6390 Engelberg, Schweiz</p>
               </div>
-              <div className="hidden md:flex flex-1 justify-end">
-                <img src={IMAGES.logoRound} alt="Logo" className="w-20 h-20 object-contain opacity-50 [filter:invert(1)]" />
+              <div className="hidden md:flex flex-1 justify-center items-center">
+                <img src={IMAGES.logoRound} alt="Logo" className="w-32 h-32 object-contain" />
               </div>
             </div>
           </FadeIn>
