@@ -463,7 +463,7 @@ export default function App() {
                 Vom historischen Steingewölbe bis zu den handgefertigten Tischen – fast jedes Möbelstück im Café ist ein Stück Kunsthandwerk und trägt seinen eigenen Charakter.
               </p>
               <p>
-                Unsere Musiker/innen, Duos und Trios spielen seit der Eröffnung bei uns. Genau diese Mischung aus Geschichte, Hingabe und echter Energie macht das Hoheneck zu etwas Besonderem.
+                Unsere Musiker/innen spielen seit der Eröffnung bei uns. Genau diese Mischung aus Geschichte, Hingabe und echter Energie macht das Hoheneck zu etwas Besonderem.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-10">
