@@ -205,8 +205,8 @@ export default function App() {
             </div>
 
             <h1 className="font-display text-white text-5xl md:text-7xl lg:text-[82px] font-bold leading-[0.93] tracking-tight mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)] animate-fadeUp" style={{ animationDelay: '120ms' }}>
-              Augustiner<br />
-              vom Fass.<br />
+              Besondere Bierauswahl.<br />
+              Live Musik.<br />
               <em className="not-italic" style={{ color: '#e8a455' }}>Echter Vibe.</em>
             </h1>
 
