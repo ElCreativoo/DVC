@@ -329,7 +329,7 @@ export default function App() {
           </FadeIn>
 
           <FadeIn>
-            <div className="bg-caramel/15 border border-caramel/25 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-14">
+            <div className="bg-caramel/15 border border-caramel/25 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-start gap-8 md:gap-14">
               <div>
                 <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-2">Öffnungszeiten</p>
                 <p className="font-display text-2xl md:text-3xl font-bold">Mittwoch – Montag</p>
