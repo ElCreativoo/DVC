@@ -415,13 +415,13 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: 2/3 musician + 1/3 disco — music vibe */}
+          {/* Row 4: 1/3 disco + 2/3 exterior — vibe */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <FadeIn delay={0} className="sm:col-span-2">
-              <img src={IMAGES.musician} alt="Live Musik" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={80}>
+            <FadeIn delay={0}>
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={80} className="sm:col-span-2">
+              <img src={IMAGES.exterior} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -431,7 +431,7 @@ export default function App() {
               <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-96 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-auto hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-96 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
