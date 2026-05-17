@@ -415,13 +415,13 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 disco + 2/3 bar overview — vibe */}
+          {/* Row 4: 1/3 disco + 2/3 jager bottle — vibe */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.barOverview} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.jagerBottle} alt="Jäger Hirsch Eiswürfel" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
