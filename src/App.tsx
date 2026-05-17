@@ -13,7 +13,6 @@ const IMAGES = {
   terrace:   '/images/img10.webp',
   porch:     '/images/img11.webp',
   interior1: '/images/img12.webp',
-  wallpaper: '/images/img13.webp',
   lantern:   '/images/img14.webp',
   interior2: '/images/img15.webp',
   interior3: '/images/img16.webp',
@@ -23,13 +22,13 @@ const IMAGES = {
   outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
   terraceWide: '/images/img21.webp', // wide outdoor terrace with building
   musician:    '/images/img22.jpg',  // b&w guitarist performing live
-  sax:         '/images/img23.jpg',  // moody saxophonist on stage
+  barOverview: '/images/img36.webp', // full bar shot — green bottle chandelier, flamingo mosaic, disco ball
+  vaultArch:   '/images/img37.webp', // stone arch vault bar interior
   jagerVault:  '/images/img24.jpg',  // Jäger + green glasses in vault
   jagerMini:   '/images/img25.jpg',  // glowing Jäger mini bottles
   jagerMosaic: '/images/img26.jpg',  // Jäger bottle mosaic on door
   jagerBarrel: '/images/img27.jpg',  // Jäger barrel table + hallway
   jagerBottle: '/images/img28.jpg',  // Jäger bottle with stag in ice bucket
-  augustiner:  '/images/img29.jpg',  // Augustiner sign + pretzel
   barWarm:     '/images/img31.jpg',  // full bar overview warm lighting
   exterior:    '/images/img30.jpg',  // exterior bench + Oktoberfest poster
   team:        '/images/img32.jpg',  // team photo laughing
@@ -197,7 +196,7 @@ export default function App() {
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
-          <img src={IMAGES.sax} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover object-[center_20%]" />
+          <img src={IMAGES.barOverview} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/60 to-bark/25" />
           <div className="absolute inset-0 bg-gradient-to-r from-bark/50 via-transparent to-transparent" />
         </div>
@@ -293,7 +292,7 @@ export default function App() {
 
           <FadeIn delay={150}>
             <div className="grid grid-cols-2 gap-4">
-              <img src={IMAGES.wallpaper} alt="Atmosphäre" className="rounded-2xl w-full h-60 object-cover shadow-lg" />
+              <img src={IMAGES.vaultArch} alt="Gewölbe Bar" className="rounded-2xl w-full h-60 object-cover shadow-lg" />
               <img src={IMAGES.vault} alt="Gewölbekeller" className="rounded-2xl w-full h-60 object-cover shadow-lg mt-10" />
               <img src={IMAGES.porch} alt="Terrasse" className="rounded-2xl w-full h-48 object-cover shadow-lg" />
               <img src={IMAGES.beers} alt="Craft Beer auf dem Tisch" className="rounded-2xl w-full h-48 object-cover object-bottom shadow-lg mt-6" />
@@ -380,26 +379,26 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Row 1: 1/3 + 2/3 — bar overview wide left, augustiner detail right */}
+          {/* Row 1: 1/3 + 2/3 — staff portrait + new bar overview */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60} className="sm:col-span-2">
-              <img src={IMAGES.barWarm} alt="Bar Innenraum warm" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.barOverview} alt="Bar Innenraum" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 2: 3 equal — jager barrel, augustiner sign, wallpaper */}
+          {/* Row 2: 3 equal — jager barrel, vault arch, barWarm */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.jagerBarrel} alt="Jäger Fass Tisch" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.augustiner} alt="Augustiner Bräu" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.vaultArch} alt="Gewölbe Bar Bogen" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={120}>
-              <img src={IMAGES.wallpaper} alt="Tapete & Atmosphäre" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.barWarm} alt="Bar Atmosphäre" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -416,13 +415,13 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 disco + 2/3 sax — music vibe */}
+          {/* Row 4: 2/3 musician + 1/3 disco — music vibe */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <FadeIn delay={0}>
-              <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={0} className="sm:col-span-2">
+              <img src={IMAGES.musician} alt="Live Musik" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.sax} alt="Live Musik Saxophon" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={80}>
+              <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -517,7 +516,7 @@ export default function App() {
         <div className="relative">
           {/* Tiled photo collage background */}
           <div className="grid grid-cols-3 md:grid-cols-5 h-[360px] md:h-[440px]">
-            {[IMAGES.jagerBarrel, IMAGES.musician, IMAGES.barWarm, IMAGES.augustiner, IMAGES.jagerBottle].map((src, i) => (
+            {[IMAGES.jagerBarrel, IMAGES.musician, IMAGES.barWarm, IMAGES.vaultArch, IMAGES.jagerBottle].map((src, i) => (
               <div key={i} className={`overflow-hidden ${i >= 3 ? 'hidden md:block' : ''}`}>
                 <img src={src} alt="" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" />
               </div>
