@@ -632,7 +632,7 @@ export default function App() {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-caramel mt-0.5">💬</span>
-                    <a href="https://wa.me/41XXXXXXXXX" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
+                    <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
                       WhatsApp schreiben
                     </a>
                   </div>
@@ -658,7 +658,7 @@ export default function App() {
                     </p>
                   </div>
                   <a
-                    href="https://wa.me/41XXXXXXXXX"
+                    href="https://wa.me/41796631441"
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-[#25D366] text-white py-4 rounded-2xl text-sm font-semibold tracking-wide hover:bg-[#1ebe5d] transition-colors duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
@@ -704,7 +704,7 @@ export default function App() {
             <div>
               <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Kontakt</p>
               <div className="space-y-3 text-white/60 text-sm">
-                <a href="https://wa.me/41XXXXXXXXX" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-caramel transition-colors">
+                <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-caramel transition-colors">
                   💬 WhatsApp schreiben
                 </a>
                 <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
