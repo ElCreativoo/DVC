@@ -163,7 +163,7 @@ export default function App() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="#reservierung" className={`hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+            <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className={`hidden md:inline-flex px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
               scrolled
                 ? 'bg-bark text-cream hover:bg-caramel'
                 : 'bg-white/15 text-white border border-white/35 hover:bg-white/25 backdrop-blur-sm'
@@ -181,10 +181,12 @@ export default function App() {
 
         <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Kontakt','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
+            <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
+              className="block text-bark font-medium hover:text-caramel transition-colors">Kontakt</a>
           </div>
         </div>
       </header>
