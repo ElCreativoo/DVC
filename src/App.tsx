@@ -338,7 +338,7 @@ export default function App() {
 
           <FadeIn>
             <div className="relative rounded-3xl overflow-hidden mb-12">
-              <img src={IMAGES.barOverview} alt="Live Musik im verrückten Café" className="w-full h-80 md:h-[480px] object-cover object-center" />
+              <img src={IMAGES.musician} alt="Live Musik im verrückten Café" className="w-full h-80 md:h-[480px] object-cover object-[center_25%]" />
               <div className="absolute inset-0 bg-gradient-to-t from-bark/90 via-bark/30 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-bark/40 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
