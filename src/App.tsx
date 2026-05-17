@@ -168,7 +168,7 @@ export default function App() {
                 ? 'bg-bark text-cream hover:bg-caramel'
                 : 'bg-white/15 text-white border border-white/35 hover:bg-white/25 backdrop-blur-sm'
             }`}>
-              Kontakt
+              WhatsApp
             </a>
             <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü"
               className={`md:hidden w-8 h-8 flex flex-col justify-center gap-[5px] ${scrolled ? 'text-bark' : 'text-white'}`}>
@@ -186,7 +186,7 @@ export default function App() {
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
             <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
-              className="block text-bark font-medium hover:text-caramel transition-colors">Kontakt</a>
+              className="block text-bark font-medium hover:text-caramel transition-colors">WhatsApp</a>
           </div>
         </div>
       </header>
@@ -223,7 +223,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
               <a href="#reservierung"
                 className="bg-caramel text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 text-center shadow-lg shadow-caramel/30">
-                Kontakt
+                WhatsApp
               </a>
               <a href="#erlebnis"
                 className="border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-white/15 transition-all duration-300 text-center backdrop-blur-sm">
@@ -828,7 +828,7 @@ export default function App() {
               </div>
             </div>
             <div>
-              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Kontakt</p>
+              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">WhatsApp</p>
               <div className="space-y-3 text-white/60 text-sm">
                 <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-caramel transition-colors">
                   💬 WhatsApp schreiben
