@@ -144,7 +144,7 @@ export default function App() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Gruppen','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Snacks','#snacks'],['Aktuelles','#aktuelles'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} className={`transition-colors hover:text-caramel ${scrolled ? 'text-bark/70' : 'text-white/80'}`}>
                 {l}
               </a>
@@ -170,7 +170,7 @@ export default function App() {
 
         <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Snacks','#snacks'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
@@ -525,6 +525,149 @@ export default function App() {
               </FadeIn>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── SNACK MENÜ ───────────────────────────────────────── */}
+      <section id="snacks" className="py-20 md:py-28 px-5 md:px-10 bg-bark text-cream">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-3">Apéro & Snackbar</p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-white">Snack Menü</h2>
+              <p className="text-white/40 text-xs mt-4">Alle Milch-, Fleisch- & Brotprodukte sind Schweizer Herkunft · Unser Personal informiert gerne über Allergene</p>
+            </div>
+          </FadeIn>
+
+          {/* Kalte Speisen */}
+          <FadeIn delay={60}>
+            <div className="mb-12">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Kalte Speisen</span>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+              <div className="space-y-5">
+                <div className="flex justify-between items-start gap-4">
+                  <div>
+                    <p className="font-semibold text-white">Schüblig mit Alpkäse</p>
+                    <p className="text-white/45 text-sm mt-0.5">Zum Selberschneiden · Schüblig / Alpkäse / Senf / Brot</p>
+                  </div>
+                  <span className="text-caramel font-semibold whitespace-nowrap">CHF 20.50</span>
+                </div>
+                <div className="h-px bg-white/8" />
+                <div>
+                  <p className="font-semibold text-white mb-2">Bunter Blattsalat</p>
+                  <div className="flex justify-between text-sm text-white/70 mb-1">
+                    <span>Kleine Portion</span><span className="text-caramel font-medium">CHF 7.50</span>
+                  </div>
+                  <div className="flex justify-between text-sm text-white/70">
+                    <span>Grosse Portion</span><span className="text-caramel font-medium">CHF 9.50</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Warme Speisen */}
+          <FadeIn delay={120}>
+            <div className="mb-12">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Warme Speisen</span>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+              <div className="grid md:grid-cols-2 gap-x-14 gap-y-5">
+                {/* Left column */}
+                <div className="space-y-5">
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Käsewürstli-Paar</p>
+                      <span className="text-caramel font-semibold">CHF 11.00</span>
+                    </div>
+                    <p className="text-white/45 text-sm">Mit Brot und Senf</p>
+                  </div>
+                  <div className="h-px bg-white/8" />
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Wienerli-Paar</p>
+                      <span className="text-caramel font-semibold">CHF 8.50</span>
+                    </div>
+                    <p className="text-white/45 text-sm">Mit Brot und Senf</p>
+                  </div>
+                  <div className="h-px bg-white/8" />
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Knoblibrot</p>
+                      <span className="text-caramel font-semibold">CHF 8.50</span>
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/8" />
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Die verrückte Apéro-Platte</p>
+                      <span className="text-caramel font-semibold">CHF 30.50</span>
+                    </div>
+                    <p className="text-white/45 text-sm">Älpler-Brot / Raclette-Brot / Knoblibrot</p>
+                  </div>
+                </div>
+                {/* Right column */}
+                <div className="space-y-5">
+                  <div>
+                    <p className="font-semibold text-white mb-1.5">Älpler-Brot</p>
+                    <div className="flex justify-between text-sm text-white/70 mb-1">
+                      <span>Sauerrahm / Zwiebeln / Käse</span><span className="text-caramel font-medium">CHF 11.50</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-white/70">
+                      <span>Mit Schinken</span><span className="text-caramel font-medium">CHF 12.50</span>
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/8" />
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Raclette-Brot</p>
+                      <span className="text-caramel font-semibold">CHF 9.50</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-white/70 mt-1">
+                      <span>Mit Schinken</span><span className="text-caramel font-medium">CHF 11.50</span>
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/8" />
+                  <div>
+                    <div className="flex justify-between items-baseline">
+                      <p className="font-semibold text-white">Fleischkäse im Brot</p>
+                      <span className="text-caramel font-semibold">CHF 13.50</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Desserts */}
+          <FadeIn delay={180}>
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Desserts</span>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+              <div className="grid md:grid-cols-2 gap-x-14 gap-y-5">
+                <div>
+                  <p className="font-semibold text-white">Dessert des Tages</p>
+                  <p className="text-white/45 text-sm mt-0.5">Frag gerne unser Personal</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-white mb-2">Ice Cream „Kalte Lust"</p>
+                  <div className="space-y-1 text-sm text-white/70">
+                    <div className="flex justify-between"><span>1 Kugel</span><span className="text-caramel font-medium">CHF 5</span></div>
+                    <div className="flex justify-between"><span>2 Kugeln</span><span className="text-caramel font-medium">CHF 8</span></div>
+                    <div className="flex justify-between"><span>3 Kugeln</span><span className="text-caramel font-medium">CHF 10</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
