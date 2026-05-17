@@ -23,6 +23,16 @@ const IMAGES = {
   outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
   terraceWide: '/images/img21.webp', // wide outdoor terrace with building
   musician:    '/images/img22.jpg',  // b&w guitarist performing live
+  sax:         '/images/img23.jpg',  // moody saxophonist on stage
+  jagerVault:  '/images/img24.jpg',  // Jäger + green glasses in vault
+  jagerMini:   '/images/img25.jpg',  // glowing Jäger mini bottles
+  jagerMosaic: '/images/img26.jpg',  // Jäger bottle mosaic on door
+  jagerBarrel: '/images/img27.jpg',  // Jäger barrel table + hallway
+  jagerBottle: '/images/img28.jpg',  // Jäger bottle with stag in ice bucket
+  augustiner:  '/images/img29.jpg',  // Augustiner sign + pretzel
+  barWarm:     '/images/img31.jpg',  // full bar overview warm lighting
+  exterior:    '/images/img30.jpg',  // exterior bench + Oktoberfest poster
+  team:        '/images/img32.jpg',  // team photo laughing
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -182,7 +192,7 @@ export default function App() {
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-between overflow-hidden">
         <div className="absolute inset-0">
-          <img src={IMAGES.bar} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover" />
+          <img src={IMAGES.sax} alt="Das verrückte Café zum Hoheneck" className="w-full h-full object-cover object-[center_20%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-bark/95 via-bark/60 to-bark/25" />
           <div className="absolute inset-0 bg-gradient-to-r from-bark/50 via-transparent to-transparent" />
         </div>
@@ -365,46 +375,59 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Row 1: 3 equal */}
+          {/* Row 1: 1/3 + 2/3 — bar overview wide left, augustiner detail right */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.owner} alt="Ruben, Inhaber" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.exterior} alt="Aussenbereich" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60}>
-              <img src={IMAGES.interior1} alt="Innenraum" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.vault} alt="Steingewölbe" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={60} className="sm:col-span-2">
+              <img src={IMAGES.barWarm} alt="Bar Innenraum warm" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 2: 2/3 + 1/3 */}
+          {/* Row 2: 3 equal — jager barrel, augustiner sign, wallpaper */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <FadeIn delay={0} className="sm:col-span-2">
-              <img src={IMAGES.interior2} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={0}>
+              <img src={IMAGES.jagerBarrel} alt="Jäger Fass Tisch" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={80}>
+            <FadeIn delay={60}>
+              <img src={IMAGES.augustiner} alt="Augustiner Bräu" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={120}>
               <img src={IMAGES.wallpaper} alt="Tapete & Atmosphäre" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 3: 3 detail shots */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          {/* Row 3: 4 moody detail shots */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.lantern} alt="Edison Lampe" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.jagerVault} alt="Gewölbekeller" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60}>
-              <img src={IMAGES.disco} alt="Craft Beer & Disco" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={50}>
+              <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.corner} alt="Gitarren-Ecke" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={100}>
+              <img src={IMAGES.jagerBottle} alt="Jäger Flasche" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={150}>
+              <img src={IMAGES.jagerMosaic} alt="Jäger Mosaik Kunsthandwerk" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 + 2/3 — like original */}
+          {/* Row 4: 2/3 musician + 1/3 disco — music vibe closer */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+            <FadeIn delay={0} className="sm:col-span-2">
+              <img src={IMAGES.musician} alt="Live Musik" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={80}>
+              <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+          </div>
+
+          {/* Row 5: 1/3 + 2/3 — terrace wide closing shot */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.beers} alt="Craft Beer" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.beers} alt="Bier vom Fass" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
               <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
@@ -441,9 +464,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn className="relative order-2 lg:order-1">
             <img
-              src={IMAGES.outdoor}
-              alt="Wirt auf der Terrasse"
-              className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover shadow-2xl"
+              src={IMAGES.team}
+              alt="Das Team vom verrückten Café"
+              className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover object-[center_30%] shadow-2xl"
             />
             <div className="absolute bottom-6 left-6 right-6 bg-cream rounded-2xl p-5 shadow-2xl border border-bark/8 flex items-center gap-4">
               {/* Logo on cream/light background — show naturally (black logo visible) */}
@@ -492,7 +515,7 @@ export default function App() {
         <div className="relative">
           {/* Tiled photo collage background */}
           <div className="grid grid-cols-3 md:grid-cols-5 h-[360px] md:h-[440px]">
-            {[IMAGES.barFull, IMAGES.interior3, IMAGES.cellar, IMAGES.corner, IMAGES.owner].map((src, i) => (
+            {[IMAGES.jagerBarrel, IMAGES.musician, IMAGES.barWarm, IMAGES.augustiner, IMAGES.jagerBottle].map((src, i) => (
               <div key={i} className={`overflow-hidden ${i >= 3 ? 'hidden md:block' : ''}`}>
                 <img src={src} alt="" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" />
               </div>
