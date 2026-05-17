@@ -737,7 +737,7 @@ export default function App() {
               <FadeIn>
                 <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Gruppenreservation</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white mb-6">
-                  Dein Abend<br />beginnt hier.
+                  Unvergesslicher<br />Abend im Hoheneck.
                 </h2>
                 <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-sm">
                   Gruppenreservationen ab 8 Personen – ausschliesslich via WhatsApp. Wir bieten grossartige Menüs und persönliche Betreuung für unvergessliche Gruppenabende.
