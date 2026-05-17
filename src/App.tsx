@@ -386,7 +386,7 @@ export default function App() {
             </FadeIn>
             <FadeIn delay={60} className="sm:col-span-2">
               <div className="grid grid-cols-2 gap-3 h-72 sm:h-80">
-                <img src={IMAGES.exterior} alt="Terrasse Engelberg" className="rounded-3xl w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+                <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
                 <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-full object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
               </div>
             </FadeIn>
