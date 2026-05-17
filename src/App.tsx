@@ -168,7 +168,7 @@ export default function App() {
                 ? 'bg-bark text-cream hover:bg-caramel'
                 : 'bg-white/15 text-white border border-white/35 hover:bg-white/25 backdrop-blur-sm'
             }`}>
-              Reservieren
+              Kontakt
             </a>
             <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü"
               className={`md:hidden w-8 h-8 flex flex-col justify-center gap-[5px] ${scrolled ? 'text-bark' : 'text-white'}`}>
@@ -181,7 +181,7 @@ export default function App() {
 
         <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Kontakt','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
