@@ -379,26 +379,26 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Row 1: 1/3 + 2/3 — staff portrait + new bar overview */}
+          {/* Row 1: 1/3 + 2/3 — staff portrait + exterior pair */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60} className="sm:col-span-2">
-              <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <div className="grid grid-cols-2 gap-3 h-72 sm:h-80">
+                <img src={IMAGES.exterior} alt="Terrasse Engelberg" className="rounded-3xl w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+                <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-full object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              </div>
             </FadeIn>
           </div>
 
-          {/* Row 2: 3 equal — jager barrel, vault arch, barWarm */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          {/* Row 2: 2 equal — jager barrel, vault arch */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.jagerBarrel} alt="Jäger Fass Tisch" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
               <img src={IMAGES.vaultArch} alt="Gewölbe Bar Bogen" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.barWarm} alt="Bar Atmosphäre" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -415,23 +415,23 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 disco + 2/3 exterior — vibe */}
+          {/* Row 4: 1/3 disco + 2/3 bar overview — vibe */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.exterior} alt="Terrasse Engelberg" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.barOverview} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 5: terrace sofa + full portrait terrace side by side */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-start">
+          {/* Row 5: terrace sofa + barWarm closing shot */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-96 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-96 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.barWarm} alt="Bar Atmosphäre" className="rounded-3xl w-full h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
