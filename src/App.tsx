@@ -210,7 +210,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
               <a href="#reservierung"
                 className="bg-caramel text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 text-center shadow-lg shadow-caramel/30">
-                Tisch reservieren
+                Kontakt
               </a>
               <a href="#erlebnis"
                 className="border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-white/15 transition-all duration-300 text-center backdrop-blur-sm">
