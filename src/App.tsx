@@ -91,6 +91,7 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', date: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [snackOpen, setSnackOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -144,7 +145,7 @@ export default function App() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Snacks','#snacks'],['Aktuelles','#aktuelles'],['Gruppen','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} className={`transition-colors hover:text-caramel ${scrolled ? 'text-bark/70' : 'text-white/80'}`}>
                 {l}
               </a>
@@ -170,7 +171,7 @@ export default function App() {
 
         <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Snacks','#snacks'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Aktuelles','#aktuelles'],['Reservieren','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
@@ -305,13 +306,18 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-5 mb-12">
             {highlights.map((h, i) => (
               <FadeIn key={h.title} delay={i * 80}>
-                <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-300 group hover:-translate-y-1 h-full">
+                <div
+                  className={`bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-300 group hover:-translate-y-1 h-full ${h.title === 'Apéro & Snackbar' ? 'cursor-pointer hover:border-caramel/40' : ''}`}
+                  onClick={h.title === 'Apéro & Snackbar' ? () => setSnackOpen(true) : undefined}
+                >
                   <div className="w-14 h-14 rounded-2xl bg-caramel/20 flex items-center justify-center text-2xl mb-7 group-hover:scale-110 transition-transform">
                     {h.emoji}
                   </div>
                   <h3 className="font-display text-xl md:text-2xl font-semibold mb-3 tracking-tight">{h.title}</h3>
                   <p className="text-white/55 leading-relaxed">{h.desc}</p>
-                </div>
+                  {h.title === 'Apéro & Snackbar' && (
+                    <p className="text-caramel text-xs font-semibold mt-4 tracking-wide uppercase">Menü ansehen →</p>
+                  )}</div>
               </FadeIn>
             ))}
           </div>
@@ -528,148 +534,100 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── SNACK MENÜ ───────────────────────────────────────── */}
-      <section id="snacks" className="py-20 md:py-28 px-5 md:px-10 bg-bark text-cream">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-3">Apéro & Snackbar</p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight text-white">Snack Menü</h2>
-              <p className="text-white/40 text-xs mt-4">Alle Milch-, Fleisch- & Brotprodukte sind Schweizer Herkunft · Unser Personal informiert gerne über Allergene</p>
+      {/* ─── SNACK MENÜ MODAL ─────────────────────────────────── */}
+      {snackOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" onClick={() => setSnackOpen(false)}>
+          <div className="absolute inset-0 bg-bark/80 backdrop-blur-md" />
+          <div
+            className="relative bg-bark border border-white/10 rounded-[32px] w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="sticky top-0 bg-bark/95 backdrop-blur-sm border-b border-white/8 px-8 py-5 flex items-center justify-between rounded-t-[32px] z-10">
+              <div>
+                <p className="text-caramel text-xs tracking-widest uppercase font-semibold">Apéro & Snackbar</p>
+                <h2 className="font-display text-2xl font-bold text-white">Snack Menü</h2>
+              </div>
+              <button onClick={() => setSnackOpen(false)} className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center text-white text-lg">✕</button>
             </div>
-          </FadeIn>
 
-          {/* Kalte Speisen */}
-          <FadeIn delay={60}>
-            <div className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-white/10" />
-                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Kalte Speisen</span>
-                <div className="h-px flex-1 bg-white/10" />
-              </div>
-              <div className="space-y-5">
-                <div className="flex justify-between items-start gap-4">
+            <div className="px-8 py-8 space-y-10 text-cream">
+              {/* Kalte Speisen */}
+              <div>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="h-px flex-1 bg-white/10" />
+                  <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Kalte Speisen</span>
+                  <div className="h-px flex-1 bg-white/10" />
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-start gap-4">
+                    <div>
+                      <p className="font-semibold text-white">Schüblig mit Alpkäse</p>
+                      <p className="text-white/45 text-sm mt-0.5">Zum Selberschneiden · Schüblig / Alpkäse / Senf / Brot</p>
+                    </div>
+                    <span className="text-caramel font-semibold whitespace-nowrap">CHF 20.50</span>
+                  </div>
+                  <div className="h-px bg-white/8" />
                   <div>
-                    <p className="font-semibold text-white">Schüblig mit Alpkäse</p>
-                    <p className="text-white/45 text-sm mt-0.5">Zum Selberschneiden · Schüblig / Alpkäse / Senf / Brot</p>
-                  </div>
-                  <span className="text-caramel font-semibold whitespace-nowrap">CHF 20.50</span>
-                </div>
-                <div className="h-px bg-white/8" />
-                <div>
-                  <p className="font-semibold text-white mb-2">Bunter Blattsalat</p>
-                  <div className="flex justify-between text-sm text-white/70 mb-1">
-                    <span>Kleine Portion</span><span className="text-caramel font-medium">CHF 7.50</span>
-                  </div>
-                  <div className="flex justify-between text-sm text-white/70">
-                    <span>Grosse Portion</span><span className="text-caramel font-medium">CHF 9.50</span>
+                    <p className="font-semibold text-white mb-2">Bunter Blattsalat</p>
+                    <div className="flex justify-between text-sm text-white/70 mb-1"><span>Kleine Portion</span><span className="text-caramel font-medium">CHF 7.50</span></div>
+                    <div className="flex justify-between text-sm text-white/70"><span>Grosse Portion</span><span className="text-caramel font-medium">CHF 9.50</span></div>
                   </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
 
-          {/* Warme Speisen */}
-          <FadeIn delay={120}>
-            <div className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-white/10" />
-                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Warme Speisen</span>
-                <div className="h-px flex-1 bg-white/10" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-x-14 gap-y-5">
-                {/* Left column */}
-                <div className="space-y-5">
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Käsewürstli-Paar</p>
-                      <span className="text-caramel font-semibold">CHF 11.00</span>
-                    </div>
-                    <p className="text-white/45 text-sm">Mit Brot und Senf</p>
-                  </div>
-                  <div className="h-px bg-white/8" />
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Wienerli-Paar</p>
-                      <span className="text-caramel font-semibold">CHF 8.50</span>
-                    </div>
-                    <p className="text-white/45 text-sm">Mit Brot und Senf</p>
-                  </div>
-                  <div className="h-px bg-white/8" />
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Knoblibrot</p>
-                      <span className="text-caramel font-semibold">CHF 8.50</span>
-                    </div>
-                  </div>
-                  <div className="h-px bg-white/8" />
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Die verrückte Apéro-Platte</p>
-                      <span className="text-caramel font-semibold">CHF 30.50</span>
-                    </div>
-                    <p className="text-white/45 text-sm">Älpler-Brot / Raclette-Brot / Knoblibrot</p>
-                  </div>
+              {/* Warme Speisen */}
+              <div>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="h-px flex-1 bg-white/10" />
+                  <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Warme Speisen</span>
+                  <div className="h-px flex-1 bg-white/10" />
                 </div>
-                {/* Right column */}
-                <div className="space-y-5">
-                  <div>
-                    <p className="font-semibold text-white mb-1.5">Älpler-Brot</p>
-                    <div className="flex justify-between text-sm text-white/70 mb-1">
-                      <span>Sauerrahm / Zwiebeln / Käse</span><span className="text-caramel font-medium">CHF 11.50</span>
-                    </div>
-                    <div className="flex justify-between text-sm text-white/70">
-                      <span>Mit Schinken</span><span className="text-caramel font-medium">CHF 12.50</span>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-x-10 gap-y-4">
+                  <div className="space-y-4">
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Käsewürstli-Paar</p><span className="text-caramel font-semibold">CHF 11.00</span></div><p className="text-white/45 text-sm">Mit Brot und Senf</p></div>
+                    <div className="h-px bg-white/8" />
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Wienerli-Paar</p><span className="text-caramel font-semibold">CHF 8.50</span></div><p className="text-white/45 text-sm">Mit Brot und Senf</p></div>
+                    <div className="h-px bg-white/8" />
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Knoblibrot</p><span className="text-caramel font-semibold">CHF 8.50</span></div></div>
+                    <div className="h-px bg-white/8" />
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Die verrückte Apéro-Platte</p><span className="text-caramel font-semibold">CHF 30.50</span></div><p className="text-white/45 text-sm">Älpler-Brot / Raclette-Brot / Knoblibrot</p></div>
                   </div>
-                  <div className="h-px bg-white/8" />
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Raclette-Brot</p>
-                      <span className="text-caramel font-semibold">CHF 9.50</span>
-                    </div>
-                    <div className="flex justify-between text-sm text-white/70 mt-1">
-                      <span>Mit Schinken</span><span className="text-caramel font-medium">CHF 11.50</span>
-                    </div>
-                  </div>
-                  <div className="h-px bg-white/8" />
-                  <div>
-                    <div className="flex justify-between items-baseline">
-                      <p className="font-semibold text-white">Fleischkäse im Brot</p>
-                      <span className="text-caramel font-semibold">CHF 13.50</span>
-                    </div>
+                  <div className="space-y-4">
+                    <div><p className="font-semibold text-white mb-1.5">Älpler-Brot</p><div className="flex justify-between text-sm text-white/70 mb-1"><span>Sauerrahm / Zwiebeln / Käse</span><span className="text-caramel font-medium">CHF 11.50</span></div><div className="flex justify-between text-sm text-white/70"><span>Mit Schinken</span><span className="text-caramel font-medium">CHF 12.50</span></div></div>
+                    <div className="h-px bg-white/8" />
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Raclette-Brot</p><span className="text-caramel font-semibold">CHF 9.50</span></div><div className="flex justify-between text-sm text-white/70 mt-1"><span>Mit Schinken</span><span className="text-caramel font-medium">CHF 11.50</span></div></div>
+                    <div className="h-px bg-white/8" />
+                    <div><div className="flex justify-between items-baseline"><p className="font-semibold text-white">Fleischkäse im Brot</p><span className="text-caramel font-semibold">CHF 13.50</span></div></div>
                   </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
 
-          {/* Desserts */}
-          <FadeIn delay={180}>
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px flex-1 bg-white/10" />
-                <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Desserts</span>
-                <div className="h-px flex-1 bg-white/10" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-x-14 gap-y-5">
-                <div>
-                  <p className="font-semibold text-white">Dessert des Tages</p>
-                  <p className="text-white/45 text-sm mt-0.5">Frag gerne unser Personal</p>
+              {/* Desserts */}
+              <div>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="h-px flex-1 bg-white/10" />
+                  <span className="text-caramel text-xs tracking-widest uppercase font-semibold">Desserts</span>
+                  <div className="h-px flex-1 bg-white/10" />
                 </div>
-                <div>
-                  <p className="font-semibold text-white mb-2">Ice Cream „Kalte Lust"</p>
-                  <div className="space-y-1 text-sm text-white/70">
-                    <div className="flex justify-between"><span>1 Kugel</span><span className="text-caramel font-medium">CHF 5</span></div>
-                    <div className="flex justify-between"><span>2 Kugeln</span><span className="text-caramel font-medium">CHF 8</span></div>
-                    <div className="flex justify-between"><span>3 Kugeln</span><span className="text-caramel font-medium">CHF 10</span></div>
+                <div className="grid md:grid-cols-2 gap-x-10 gap-y-4">
+                  <div><p className="font-semibold text-white">Dessert des Tages</p><p className="text-white/45 text-sm mt-0.5">Frag gerne unser Personal</p></div>
+                  <div>
+                    <p className="font-semibold text-white mb-2">Ice Cream „Kalte Lust"</p>
+                    <div className="space-y-1 text-sm text-white/70">
+                      <div className="flex justify-between"><span>1 Kugel</span><span className="text-caramel font-medium">CHF 5</span></div>
+                      <div className="flex justify-between"><span>2 Kugeln</span><span className="text-caramel font-medium">CHF 8</span></div>
+                      <div className="flex justify-between"><span>3 Kugeln</span><span className="text-caramel font-medium">CHF 10</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <p className="text-white/25 text-xs text-center pb-2">Alle Milch-, Fleisch- & Brotprodukte sind Schweizer Herkunft · Unser Personal informiert gerne über Allergene</p>
             </div>
-          </FadeIn>
+          </div>
         </div>
-      </section>
+      )}
 
       {/* ─── AKTUELLES / INSTAGRAM FEED ───────────────────────── */}
       <section id="aktuelles" className="py-20 md:py-28 px-5 md:px-10 bg-cream">
