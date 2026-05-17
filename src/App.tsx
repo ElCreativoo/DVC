@@ -428,10 +428,10 @@ export default function App() {
           {/* Row 5: 1/3 + 2/3 — terrace wide closing shot */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-96 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-96 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
