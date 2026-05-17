@@ -20,7 +20,7 @@ const IMAGES = {
   disco2:    '/images/img18.webp',  // Freefall bottle + disco helmet
   helmetGirl: '/images/img19.webp', // woman wearing disco helmet
   outdoor2:   '/images/img20.webp', // red sofa porch, outdoor seating
-  terraceWide: '/images/img21.webp', // wide outdoor terrace with building
+  terraceWide: '/images/img21.jpg', // wide outdoor terrace with building
   musician:    '/images/img22.jpg',  // b&w guitarist performing live
   barOverview: '/images/img36.webp', // full bar shot — green bottle chandelier, flamingo mosaic, disco ball
   vaultArch:   '/images/img37.webp', // stone arch vault bar interior
