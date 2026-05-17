@@ -31,7 +31,7 @@ const IMAGES = {
   jagerBottle: '/images/img28.jpg',  // Jäger bottle with stag in ice bucket
   barWarm:     '/images/img31.jpg',  // full bar overview warm lighting
   exterior:    '/images/img30.jpg',  // exterior bench + Oktoberfest poster
-  team:        '/images/img32.jpg',  // team photo laughing
+  team:        '/images/img32.webp', // team photo
   rubenStaff:  '/images/img33.webp', // Ruben + staff laughing at bar
   terraceSofa: '/images/img34.jpg',  // outdoor terrace colourful cushions
   edisonLamp:  '/images/img35.webp', // Edison lantern close-up glowing
