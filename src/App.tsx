@@ -466,9 +466,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn className="relative order-2 lg:order-1">
             <img
-              src={IMAGES.team}
-              alt="Das Team vom verrückten Café"
-              className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover object-[center_30%] shadow-2xl"
+              src={IMAGES.outdoor}
+              alt="Wirt auf der Terrasse"
+              className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover shadow-2xl"
             />
             <div className="absolute bottom-6 left-6 right-6 bg-cream rounded-2xl p-5 shadow-2xl border border-bark/8 flex items-center gap-4">
               {/* Logo on cream/light background — show naturally (black logo visible) */}
