@@ -33,6 +33,9 @@ const IMAGES = {
   barWarm:     '/images/img31.jpg',  // full bar overview warm lighting
   exterior:    '/images/img30.jpg',  // exterior bench + Oktoberfest poster
   team:        '/images/img32.jpg',  // team photo laughing
+  rubenStaff:  '/images/img33.webp', // Ruben + staff laughing at bar
+  terraceSofa: '/images/img34.jpg',  // outdoor terrace colourful cushions
+  edisonLamp:  '/images/img35.webp', // Edison lantern close-up glowing
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -380,7 +383,7 @@ export default function App() {
           {/* Row 1: 1/3 + 2/3 — bar overview wide left, augustiner detail right */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.exterior} alt="Aussenbereich" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60} className="sm:col-span-2">
               <img src={IMAGES.barWarm} alt="Bar Innenraum warm" className="rounded-3xl w-full h-72 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
@@ -403,7 +406,7 @@ export default function App() {
           {/* Row 3: 4 moody detail shots */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.jagerVault} alt="Gewölbekeller" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.edisonLamp} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={50}>
               <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
@@ -429,7 +432,7 @@ export default function App() {
           {/* Row 5: 1/3 + 2/3 — terrace wide closing shot */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.beers} alt="Bier vom Fass" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
               <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
