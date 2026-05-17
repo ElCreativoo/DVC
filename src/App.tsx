@@ -403,29 +403,26 @@ export default function App() {
             </FadeIn>
           </div>
 
-          {/* Row 3: 4 moody detail shots */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+          {/* Row 3: 3 moody detail shots */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.edisonLamp} alt="Edison Lampe" className="rounded-3xl w-full h-52 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.edisonLamp} alt="Edison Lampe" className="rounded-3xl w-full h-56 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={50}>
-              <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={60}>
+              <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={100}>
-              <img src={IMAGES.jagerBottle} alt="Jäger Flasche" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={150}>
-              <img src={IMAGES.jagerMosaic} alt="Jäger Mosaik Kunsthandwerk" className="rounded-3xl w-full h-52 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={120}>
+              <img src={IMAGES.jagerMosaic} alt="Jäger Mosaik Kunsthandwerk" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 4: 2/3 musician + 1/3 disco — music vibe closer */}
+          {/* Row 4: 1/3 disco + 2/3 sax — music vibe */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <FadeIn delay={0} className="sm:col-span-2">
-              <img src={IMAGES.musician} alt="Live Musik" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-            </FadeIn>
-            <FadeIn delay={80}>
+            <FadeIn delay={0}>
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={80} className="sm:col-span-2">
+              <img src={IMAGES.sax} alt="Live Musik Saxophon" className="rounded-3xl w-full h-64 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
