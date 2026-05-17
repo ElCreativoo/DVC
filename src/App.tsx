@@ -431,7 +431,7 @@ export default function App() {
               <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-60 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-top hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceWide} alt="Terrasse Engelberg" className="rounded-3xl w-full h-60 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
