@@ -379,16 +379,16 @@ export default function App() {
             </h2>
           </FadeIn>
 
-          {/* Row 1: 1/3 + 2/3 — staff portrait + exterior pair */}
+          {/* Row 1: 3 equal columns — staff, team, terrace */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
               <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={60} className="sm:col-span-2">
-              <div className="grid grid-cols-2 gap-3 h-72 sm:h-80">
-                <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-                <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-full object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
-              </div>
+            <FadeIn delay={60}>
+              <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            </FadeIn>
+            <FadeIn delay={120}>
+              <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
