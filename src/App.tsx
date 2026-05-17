@@ -338,7 +338,7 @@ export default function App() {
 
           <FadeIn>
             <div className="relative rounded-3xl overflow-hidden mb-12">
-              <img src={IMAGES.musician} alt="Live Musik im verrückten Café" className="w-full h-80 md:h-[480px] object-cover object-[center_25%]" />
+              <img src={IMAGES.barOverview} alt="Live Musik im verrückten Café" className="w-full h-80 md:h-[480px] object-cover object-center" />
               <div className="absolute inset-0 bg-gradient-to-t from-bark/90 via-bark/30 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-bark/40 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12">
@@ -385,7 +385,7 @@ export default function App() {
               <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60} className="sm:col-span-2">
-              <img src={IMAGES.barOverview} alt="Bar Innenraum" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
