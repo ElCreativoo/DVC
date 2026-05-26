@@ -105,6 +105,7 @@ export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', date: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [snackOpen, setSnackOpen] = useState(false)
+  const [sommerOpen, setSommerOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -228,10 +229,10 @@ export default function App() {
                 className="bg-caramel text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 text-center shadow-lg shadow-caramel/30">
                 WhatsApp
               </a>
-              <a href="#erlebnis"
+              <button onClick={() => setSommerOpen(true)}
                 className="border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-white/15 transition-all duration-300 text-center backdrop-blur-sm">
-                Mehr entdecken
-              </a>
+                Programm im Sommer
+              </button>
             </div>
 
             {/* Stats row + oversized wordmark */}
@@ -558,6 +559,20 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* ─── SOMMER PROGRAMM MODAL ────────────────────────────── */}
+      {sommerOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" onClick={() => setSommerOpen(false)}>
+          <div className="absolute inset-0 bg-bark/80 backdrop-blur-md" />
+          <div className="relative max-w-lg w-full" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSommerOpen(false)}
+              className="absolute -top-4 -right-4 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 transition-colors flex items-center justify-center text-white text-lg shadow-lg">
+              ✕
+            </button>
+            <img src="/images/sommer-programm.jpg" alt="Sommer Live Music & Events" className="w-full rounded-3xl shadow-2xl" />
+          </div>
+        </div>
+      )}
 
       {/* ─── SNACK MENÜ MODAL ─────────────────────────────────── */}
       {snackOpen && (
