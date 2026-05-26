@@ -686,12 +686,6 @@ export default function App() {
                       <p className="text-white/40 text-sm">Freitag & Samstag bis 01:30 Uhr</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-caramel mt-0.5">💬</span>
-                    <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
-                      Via WhatsApp anfragen
-                    </a>
-                  </div>
                 </div>
               </FadeIn>
 
