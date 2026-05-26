@@ -187,14 +187,14 @@ export default function App() {
           </div>
         </div>
 
-        <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96 border-b border-bark/10' : 'max-h-0'}`}>
+        <div className={`md:hidden bg-bark/97 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96 border-b border-white/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
             {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
-                className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
+                className="block text-white font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
             <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
-              className="block text-bark font-medium hover:text-caramel transition-colors">WhatsApp</a>
+              className="block text-white font-medium hover:text-caramel transition-colors">WhatsApp</a>
           </div>
         </div>
       </header>
@@ -239,14 +239,6 @@ export default function App() {
               </button>
             </div>
 
-            {/* Wordmark — mobile: own row, desktop: inline with stats */}
-            <img
-              src={IMAGES.logoText2}
-              alt="Das verrückte Café zum Hoheneck"
-              className="block sm:hidden h-28 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] mb-4 animate-fadeUp"
-              style={{ animationDelay: '340ms' }}
-            />
-
             {/* Stats row + oversized wordmark (desktop) */}
             <div className="flex flex-wrap items-center gap-5 md:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
               <div>
@@ -273,16 +265,13 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile section nav pills */}
-        <div className="absolute bottom-24 left-0 right-0 px-5 sm:hidden animate-fadeUp" style={{ animationDelay: '450ms' }}>
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
-              <a key={l} href={h} className="flex-shrink-0 px-3.5 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-xs font-medium hover:bg-white/20 transition-colors">
-                {l} →
-              </a>
-            ))}
-          </div>
-        </div>
+        {/* Wordmark — bottom-right on mobile */}
+        <img
+          src={IMAGES.logoText2}
+          alt="Das verrückte Café zum Hoheneck"
+          className="absolute bottom-10 right-5 sm:hidden h-24 object-contain object-right drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp pointer-events-none"
+          style={{ animationDelay: '450ms' }}
+        />
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 right-10 hidden md:flex flex-col items-center gap-2 opacity-60 animate-fadeUp" style={{ animationDelay: '500ms' }}>
