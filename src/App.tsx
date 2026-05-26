@@ -183,9 +183,9 @@ export default function App() {
           </div>
         </div>
 
-        <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-72 border-b border-bark/10' : 'max-h-0'}`}>
+        <div className={`md:hidden bg-cream/98 backdrop-blur-xl transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96 border-b border-bark/10' : 'max-h-0'}`}>
           <div className="px-5 pb-6 space-y-4 pt-3">
-            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns']].map(([l,h]) => (
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-bark font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
@@ -214,7 +214,7 @@ export default function App() {
               Engelbergs kultigstes Lokal
             </div>
 
-            <h1 className="font-display text-white text-5xl md:text-7xl lg:text-[82px] font-bold leading-[0.93] tracking-tight mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)] animate-fadeUp" style={{ animationDelay: '120ms' }}>
+            <h1 className="font-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-[82px] font-bold leading-[0.93] tracking-tight mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)] animate-fadeUp" style={{ animationDelay: '120ms' }}>
               Bier vom Fass.<br />
               Live Musik.<br />
               <em className="not-italic" style={{ color: '#e8a455' }}>Echter Vibe.</em>
@@ -224,8 +224,8 @@ export default function App() {
               Ein verrücktes Café, in dem kaum Kaffee getrunken wird – dafür Augustiner und Appenzeller frisch vom Fass, Live-Musik und Nächte, die bleiben.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-12 animate-fadeUp" style={{ animationDelay: '270ms' }}>
-              <a href="#reservierung"
+            <div className="flex flex-col sm:flex-row gap-3 mb-10 animate-fadeUp" style={{ animationDelay: '270ms' }}>
+              <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer"
                 className="bg-caramel text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 text-center shadow-lg shadow-caramel/30">
                 WhatsApp
               </a>
@@ -382,15 +382,15 @@ export default function App() {
           </FadeIn>
 
           {/* Row 1: 3 equal columns — staff, team, terrace */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.rubenStaff} alt="Ruben & Team" className="rounded-3xl w-full h-44 sm:h-80 object-cover object-[center_20%] hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.team} alt="Das Team" className="rounded-3xl w-full h-44 sm:h-80 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-72 sm:h-80 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={120} className="col-span-2 sm:col-span-1">
+              <img src={IMAGES.terraceWide} alt="Aussenbereich" className="rounded-3xl w-full h-44 sm:h-80 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -405,35 +405,35 @@ export default function App() {
           </div>
 
           {/* Row 3: 3 moody detail shots */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.edisonLamp} alt="Edison Lampe" className="rounded-3xl w-full h-56 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.edisonLamp} alt="Edison Lampe" className="rounded-3xl w-full h-40 sm:h-56 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={60}>
-              <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.jagerMini} alt="Jäger Mini Flaschen" className="rounded-3xl w-full h-40 sm:h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
-            <FadeIn delay={120}>
-              <img src={IMAGES.jagerMosaic} alt="Jäger Mosaik Kunsthandwerk" className="rounded-3xl w-full h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+            <FadeIn delay={120} className="col-span-2 sm:col-span-1">
+              <img src={IMAGES.jagerMosaic} alt="Jäger Mosaik Kunsthandwerk" className="rounded-3xl w-full h-40 sm:h-56 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
-          {/* Row 4: 1/3 disco + 2/3 bar overview — vibe */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          {/* Row 4: 1/3 disco + 2/3 new interior — vibe */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-48 sm:h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.newInterior} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.newInterior} alt="Bar Innenraum" className="rounded-3xl w-full h-48 sm:h-64 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
           {/* Row 5: terrace sofa + barWarm closing shot */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <FadeIn delay={0}>
-              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.terraceSofa} alt="Terrasse mit Polster" className="rounded-3xl w-full h-48 sm:h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.barWarm} alt="Bar Atmosphäre" className="rounded-3xl w-full h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.barWarm} alt="Bar Atmosphäre" className="rounded-3xl w-full h-48 sm:h-72 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
@@ -678,7 +678,7 @@ export default function App() {
             </div>
             <div className="absolute top-0 right-0 w-96 h-96 bg-caramel/20 rounded-full blur-3xl" />
 
-            <div className="relative z-10 p-8 md:p-16 grid lg:grid-cols-2 gap-14 items-start">
+            <div className="relative z-10 p-6 md:p-16 grid lg:grid-cols-2 gap-10 md:gap-14 items-start">
               <FadeIn>
                 <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Gruppenreservation</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white mb-6">
@@ -706,7 +706,7 @@ export default function App() {
               </FadeIn>
 
               <FadeIn delay={150}>
-                <div className="bg-cream rounded-3xl p-10 shadow-2xl flex flex-col items-center text-center gap-6">
+                <div className="bg-cream rounded-3xl p-6 md:p-10 shadow-2xl flex flex-col items-center text-center gap-6">
                   <div className="w-20 h-20 rounded-full bg-[#25D366]/10 flex items-center justify-center text-4xl">
                     💬
                   </div>
