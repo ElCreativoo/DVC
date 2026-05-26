@@ -689,14 +689,7 @@ export default function App() {
                   <div className="flex items-start gap-3">
                     <span className="text-caramel mt-0.5">💬</span>
                     <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
-                      Unkompliziert via WhatsApp anfragen
-                    </a>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <IgIcon className="w-5 h-5 text-caramel mt-0.5 flex-shrink-0" />
-                    <a href="https://instagram.com/das_verrueckte_cafe" target="_blank" rel="noreferrer"
-                      className="hover:text-caramel transition-colors">
-                      @das_verrueckte_cafe
+                      Via WhatsApp anfragen
                     </a>
                   </div>
                 </div>
@@ -708,7 +701,7 @@ export default function App() {
                     💬
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-bark mb-3">Jetzt unkompliziert anfragen</h3>
+                    <h3 className="font-display text-2xl font-bold text-bark mb-3">Gruppenreservation anfragen</h3>
                     <p className="text-bark/60 text-sm leading-relaxed max-w-xs mx-auto">
                       Schreib uns einfach auf WhatsApp – wir melden uns schnell zurück und planen gemeinsam deinen perfekten Abend.
                     </p>
