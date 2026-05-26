@@ -35,6 +35,7 @@ const IMAGES = {
   rubenStaff:  '/images/img33.webp?v=2', // Ruben + staff laughing at bar
   terraceSofa: '/images/img34.jpg',  // outdoor terrace colourful cushions
   edisonLamp:  '/images/img35.webp', // Edison lantern close-up glowing
+  newInterior: '/images/img38.jpg',  // new interior shot
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
@@ -421,7 +422,7 @@ export default function App() {
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.barOverview} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.newInterior} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
