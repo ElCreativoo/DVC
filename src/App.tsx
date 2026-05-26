@@ -666,10 +666,13 @@ export default function App() {
               <FadeIn>
                 <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-5">Gruppenreservation</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white mb-6">
-                  Unvergesslicher<br />Abend im Hoheneck.
+                  Legendäre Feste<br />im Hoheneck.
                 </h2>
+                <p className="text-white/60 text-lg leading-relaxed mb-4 max-w-sm">
+                  Ob im gemütlichen Lokal oder im Saal für grössere Gruppen – bei uns findest du den richtigen Rahmen für deinen Anlass. Frag einfach unkompliziert via WhatsApp an!
+                </p>
                 <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-sm">
-                  Gruppenreservationen ab 8 Personen – ausschliesslich via WhatsApp. Wir bieten grossartige Menüs und persönliche Betreuung für unvergessliche Gruppenabende.
+                  Wir stellen grossartige Menüs und feine Apéros zusammen – persönlich, herzlich und genau nach deinen Wünschen.
                 </p>
                 <div className="space-y-4 text-white/70">
                   <div className="flex items-start gap-3">
@@ -686,7 +689,7 @@ export default function App() {
                   <div className="flex items-start gap-3">
                     <span className="text-caramel mt-0.5">💬</span>
                     <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="hover:text-caramel transition-colors">
-                      WhatsApp schreiben
+                      Unkompliziert via WhatsApp anfragen
                     </a>
                   </div>
                   <div className="flex items-start gap-3">
@@ -705,9 +708,9 @@ export default function App() {
                     💬
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-bark mb-3">Gruppenreservation anfragen</h3>
+                    <h3 className="font-display text-2xl font-bold text-bark mb-3">Jetzt unkompliziert anfragen</h3>
                     <p className="text-bark/60 text-sm leading-relaxed max-w-xs mx-auto">
-                      Schreib uns direkt auf WhatsApp – wir antworten schnell und helfen dir, den perfekten Abend für deine Gruppe zu planen.
+                      Schreib uns einfach auf WhatsApp – wir melden uns schnell zurück und planen gemeinsam deinen perfekten Abend.
                     </p>
                   </div>
                   <a
@@ -716,9 +719,8 @@ export default function App() {
                     rel="noreferrer"
                     className="w-full bg-[#25D366] text-white py-4 rounded-2xl text-sm font-semibold tracking-wide hover:bg-[#1ebe5d] transition-colors duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
                   >
-                    <span>Auf WhatsApp schreiben →</span>
+                    <span>Auf WhatsApp anfragen →</span>
                   </a>
-                  <p className="text-bark/30 text-xs">Nur für Gruppen ab 8 Personen</p>
                 </div>
               </FadeIn>
             </div>
