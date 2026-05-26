@@ -27,7 +27,7 @@ const IMAGES = {
   jagerVault:  '/images/img24.jpg',  // Jäger + green glasses in vault
   jagerMini:   '/images/img25.jpg',  // glowing Jäger mini bottles
   jagerMosaic: '/images/img26.jpg',  // Jäger bottle mosaic on door
-  jagerBarrel: '/images/img27.jpg',  // Jäger barrel table + hallway
+  jagerBarrel: '/images/img27.webp', // Jäger barrel table + hallway
   jagerBottle: '/images/img28.jpg',  // Jäger bottle with stag in ice bucket
   barWarm:     '/images/img31.jpg',  // full bar overview warm lighting
   exterior:    '/images/img30.jpg',  // exterior bench + Oktoberfest poster
