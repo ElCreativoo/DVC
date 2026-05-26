@@ -49,7 +49,7 @@ const testimonials = [
 
 const highlights = [
   { emoji: '🎸', title: 'Live Musik & Karaoke', desc: 'Nationale und internationale Musiker/innen, Duos und Trios – plus legendäre Wunschkonzert- und Karaoke-Abende bis spät in die Nacht.' },
-  { emoji: '🍺', title: 'Besondere Bierauswahl', desc: 'Augustiner und Appenzeller frisch vom Fass – das verrückte Café ist bekannt für das beste Feierabendbier im Dorf.' },
+  { emoji: '🍺', title: 'Besondere Bierauswahl', desc: 'Augustiner und Appenzeller frisch vom Fass, dazu eine handverlesene Auswahl an Craft Bieren und Spezialbieren – das verrückte Café ist bekannt für das beste Feierabendbier im Dorf.' },
   { emoji: '🏔️', title: 'Gemütlicher Gewölbekeller', desc: 'Ruhige Ecken im historischen Steingewölbe – warm, einzigartig und zum Wohlfühlen gemacht.' },
   { emoji: '🥨', title: 'Apéro & Snackbar', desc: 'Kreatives Aperoangebot und feine Snacks – frisch, unkompliziert und perfekt zum Feierabendbier.' },
 ]
