@@ -25,7 +25,7 @@ const IMAGES = {
   barOverview: '/images/img36.webp', // full bar shot — green bottle chandelier, flamingo mosaic, disco ball
   vaultArch:   '/images/img37.webp', // stone arch vault bar interior
   jagerVault:  '/images/img24.jpg',  // Jäger + green glasses in vault
-  jagerMini:   '/images/img25.jpg',  // glowing Jäger mini bottles
+  jagerMini:   '/images/img25.jpg?v=2', // glowing Jäger mini bottles
   jagerMosaic: '/images/img26.jpg',  // Jäger bottle mosaic on door
   jagerBarrel: '/images/img27.webp', // Jäger barrel table + hallway
   jagerBottle: '/images/img28.jpg',  // Jäger bottle with stag in ice bucket
