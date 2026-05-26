@@ -422,7 +422,7 @@ export default function App() {
               <img src={IMAGES.disco} alt="Disco Nacht" className="rounded-3xl w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
             <FadeIn delay={80} className="sm:col-span-2">
-              <img src={IMAGES.newInterior} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-center hover:scale-[1.02] transition-transform duration-500 shadow-md" />
+              <img src={IMAGES.newInterior} alt="Bar Innenraum" className="rounded-3xl w-full h-64 object-cover object-bottom hover:scale-[1.02] transition-transform duration-500 shadow-md" />
             </FadeIn>
           </div>
 
