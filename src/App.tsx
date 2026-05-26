@@ -248,7 +248,7 @@ export default function App() {
               <div className="w-px h-8 bg-white/20" />
               <div>
                 <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
-                <p className="text-white/60 text-xs mt-0.5 tracking-wide">Gegründet</p>
+                <p className="text-white/60 text-xs mt-0.5 tracking-wide">Eröffnet</p>
               </div>
               <div className="w-px h-8 bg-white/20 hidden sm:block" />
               <img
