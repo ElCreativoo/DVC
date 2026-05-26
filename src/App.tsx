@@ -106,6 +106,7 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false)
   const [snackOpen, setSnackOpen] = useState(false)
   const [sommerOpen, setSommerOpen] = useState(false)
+  const [openHighlight, setOpenHighlight] = useState<number|null>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -173,6 +174,12 @@ export default function App() {
                 : 'bg-white/15 text-white border border-white/35 hover:bg-white/25 backdrop-blur-sm'
             }`}>
               WhatsApp
+            </a>
+            <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer"
+              className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center transition-all ${scrolled ? 'bg-[#25D366] text-white' : 'bg-white/15 text-white border border-white/30 backdrop-blur-sm'}`}>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
             </a>
             <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü"
               className={`md:hidden w-8 h-8 flex flex-col justify-center gap-[5px] ${scrolled ? 'text-bark' : 'text-white'}`}>
@@ -255,9 +262,20 @@ export default function App() {
               <img
                 src={IMAGES.logoText2}
                 alt="Das verrückte Café zum Hoheneck"
-                className="hidden sm:block h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6 translate-y-3"
+                className="block h-20 sm:h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] sm:-ml-4 md:-ml-6 sm:translate-y-3"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Mobile section nav pills */}
+        <div className="absolute bottom-6 left-0 right-0 px-5 sm:hidden animate-fadeUp" style={{ animationDelay: '450ms' }}>
+          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+            {[['Atmosphäre','#atmosphare'],['Erlebnis','#erlebnis'],['Galerie','#galerie'],['Über uns','#uber-uns'],['Gruppen','#reservierung']].map(([l,h]) => (
+              <a key={l} href={h} className="flex-shrink-0 px-3.5 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-xs font-medium hover:bg-white/20 transition-colors">
+                {l} →
+              </a>
+            ))}
           </div>
         </div>
 
@@ -319,23 +337,40 @@ export default function App() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-12">
-            {highlights.map((h, i) => (
-              <FadeIn key={h.title} delay={i * 80}>
-                <div
-                  className={`bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-300 group hover:-translate-y-1 h-full ${h.title === 'Apéro & Snackbar' ? 'cursor-pointer hover:border-caramel/40' : ''}`}
-                  onClick={h.title === 'Apéro & Snackbar' ? () => setSnackOpen(true) : undefined}
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-caramel/20 flex items-center justify-center text-2xl mb-7 group-hover:scale-110 transition-transform">
-                    {h.emoji}
+          <div className="grid md:grid-cols-2 gap-3 md:gap-5 mb-12">
+            {highlights.map((h, i) => {
+              const isOpen = openHighlight === i
+              const isSnack = h.title === 'Apéro & Snackbar'
+              return (
+                <FadeIn key={h.title} delay={i * 80}>
+                  <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/8 hover:border-white/20">
+                    {/* Header row — always visible, tappable on mobile */}
+                    <button
+                      className="w-full flex items-center gap-4 p-6 md:p-10 text-left"
+                      onClick={() => {
+                        if (isSnack && isOpen) { setSnackOpen(true); return }
+                        setOpenHighlight(isOpen ? null : i)
+                      }}
+                    >
+                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-caramel/20 flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
+                        {h.emoji}
+                      </div>
+                      <h3 className="font-display text-lg md:text-2xl font-semibold tracking-tight flex-1">{h.title}</h3>
+                      <span className={`md:hidden text-white/40 text-lg transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>⌄</span>
+                    </button>
+                    {/* Description — always shown on desktop, accordion on mobile */}
+                    <div className={`md:block overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48' : 'max-h-0 md:max-h-none'}`}>
+                      <div className="px-6 pb-6 md:px-10 md:pb-10 md:pt-0 -mt-2">
+                        <p className="text-white/55 leading-relaxed">{h.desc}</p>
+                        {isSnack && (
+                          <button onClick={() => setSnackOpen(true)} className="text-caramel text-xs font-semibold mt-4 tracking-wide uppercase block">Menü ansehen →</button>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-display text-xl md:text-2xl font-semibold mb-3 tracking-tight">{h.title}</h3>
-                  <p className="text-white/55 leading-relaxed">{h.desc}</p>
-                  {h.title === 'Apéro & Snackbar' && (
-                    <p className="text-caramel text-xs font-semibold mt-4 tracking-wide uppercase">Menü ansehen →</p>
-                  )}</div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              )
+            })}
           </div>
 
           <FadeIn>
