@@ -35,7 +35,7 @@ const IMAGES = {
   rubenStaff:  '/images/img33.webp?v=2', // Ruben + staff laughing at bar
   terraceSofa: '/images/img34.jpg',  // outdoor terrace colourful cushions
   edisonLamp:  '/images/img35.webp', // Edison lantern close-up glowing
-  newInterior: '/images/img38.jpg',  // new interior shot
+  newInterior: '/images/img38.jpg?v=2',  // new interior shot
   logoRound: '/images/logo-round.png',
   logoText:  '/images/logo-text.png',
   logoText2: '/images/logo-text2.png',   // white wordmark, transparent bg
