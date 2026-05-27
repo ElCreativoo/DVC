@@ -235,37 +235,29 @@ export default function App() {
               </button>
             </div>
 
-            {/* Stats row + oversized wordmark (desktop) */}
-            <div className="flex flex-wrap items-center gap-5 md:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
-              <div>
-                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Live</p>
-                <p className="text-white/60 text-xs mt-0.5 tracking-wide">Bands jede Woche</p>
+            {/* Stats row + wordmark — all 4 side by side */}
+            <div className="flex items-center gap-3 sm:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
+              <div className="flex-shrink-0">
+                <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Live</p>
+                <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Bands jede Woche</p>
               </div>
-              <div className="w-px h-8 bg-white/20" />
-              <div>
-                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Kult</p>
-                <p className="text-white/60 text-xs mt-0.5 tracking-wide">Bar in Engelberg</p>
+              <div className="w-px h-8 bg-white/20 flex-shrink-0" />
+              <div className="flex-shrink-0">
+                <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Kult</p>
+                <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Bar in Engelberg</p>
               </div>
-              <div className="w-px h-8 bg-white/20" />
-              <div>
-                <p className="text-white text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
-                <p className="text-white/60 text-xs mt-0.5 tracking-wide">Eröffnet</p>
+              <div className="w-px h-8 bg-white/20 flex-shrink-0" />
+              <div className="flex-shrink-0">
+                <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">2023</p>
+                <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Eröffnet</p>
               </div>
-              <div className="w-px h-8 bg-white/20" />
+              <div className="w-px h-8 bg-white/20 flex-shrink-0" />
               <img
                 src={IMAGES.logoText2}
                 alt="Das verrückte Café zum Hoheneck"
-                className="hidden sm:block h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6 translate-y-3"
+                className="h-16 sm:h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] sm:-ml-4 md:-ml-6 sm:translate-y-3 flex-shrink-0"
               />
             </div>
-
-            {/* Wordmark — mobile only, below stats */}
-            <img
-              src={IMAGES.logoText2}
-              alt="Das verrückte Café zum Hoheneck"
-              className="sm:hidden mt-6 h-36 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp -ml-1"
-              style={{ animationDelay: '420ms' }}
-            />
           </div>
         </div>
 
