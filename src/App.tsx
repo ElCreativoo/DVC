@@ -326,7 +326,7 @@ export default function App() {
               const isSnack = h.title === 'Apéro & Snackbar'
               return (
                 <FadeIn key={h.title} delay={i * 80}>
-                  <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/8 hover:border-white/20">
+                  <div className="bg-white/5 border border-white/10 rounded-3xl transition-all duration-300 hover:bg-white/8 hover:border-white/20">
                     {/* Header row — always visible, tappable on mobile */}
                     <button
                       className="w-full flex items-center gap-4 p-6 md:p-10 text-left"
@@ -342,7 +342,7 @@ export default function App() {
                       <span className={`md:hidden text-white/40 text-lg transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>⌄</span>
                     </button>
                     {/* Description — always shown on desktop, accordion on mobile */}
-                    <div className={`md:block overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0 md:max-h-none'}`}>
+                    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px]' : 'max-h-0 md:max-h-[500px]'}`}>
                       <div className="px-6 pb-6 md:px-10 md:pb-10 md:pt-0 -mt-2">
                         <p className="text-white/55 leading-relaxed">{h.desc}</p>
                         {isSnack && (
