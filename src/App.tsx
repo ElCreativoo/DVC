@@ -238,11 +238,6 @@ export default function App() {
             {/* Stats row + wordmark — all 4 side by side */}
             <div className="flex items-center gap-3 sm:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
               <div className="flex-shrink-0">
-                <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Live</p>
-                <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Bands</p>
-              </div>
-              <div className="w-px h-8 bg-white/20 flex-shrink-0" />
-              <div className="flex-shrink-0">
                 <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Kult</p>
                 <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Bar in Engelberg</p>
               </div>
