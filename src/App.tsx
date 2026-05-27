@@ -261,11 +261,11 @@ export default function App() {
           </div>
         </div>
 
-        {/* Wordmark — bottom-right on mobile */}
+        {/* Wordmark — bottom-left on mobile, large */}
         <img
           src={IMAGES.logoText2}
           alt="Das verrückte Café zum Hoheneck"
-          className="absolute bottom-10 right-5 sm:hidden h-24 object-contain object-right drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp pointer-events-none"
+          className="absolute bottom-10 left-0 sm:hidden h-36 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp pointer-events-none"
           style={{ animationDelay: '450ms' }}
         />
 
