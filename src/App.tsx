@@ -353,7 +353,7 @@ export default function App() {
                       <span className={`md:hidden text-white/40 text-lg transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>⌄</span>
                     </button>
                     {/* Description — always shown on desktop, accordion on mobile */}
-                    <div className={`md:block overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48' : 'max-h-0 md:max-h-none'}`}>
+                    <div className={`md:block overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0 md:max-h-none'}`}>
                       <div className="px-6 pb-6 md:px-10 md:pb-10 md:pt-0 -mt-2">
                         <p className="text-white/55 leading-relaxed">{h.desc}</p>
                         {isSnack && (
