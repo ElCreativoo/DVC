@@ -532,7 +532,7 @@ export default function App() {
         {/* Full-bleed image strip with dark overlay and CTA */}
         <div className="relative">
           {/* Tiled photo collage background */}
-          <div className="grid grid-cols-3 md:grid-cols-5 h-[360px] md:h-[440px]">
+          <div className="grid grid-cols-3 md:grid-cols-5 h-[460px] md:h-[440px]">
             {[IMAGES.jagerBarrel, IMAGES.musician, IMAGES.barWarm, IMAGES.vaultArch, IMAGES.jagerBottle].map((src, i) => (
               <div key={i} className={`overflow-hidden ${i >= 3 ? 'hidden md:block' : ''}`}>
                 <img src={src} alt="" className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-[3s]" />
@@ -550,12 +550,12 @@ export default function App() {
                     <span className="text-white/70 text-sm font-medium tracking-wide">@das_verrueckte_cafe</span>
                   </div>
 
-                  <h2 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+                  <h2 className="font-display text-2xl md:text-5xl font-bold text-white leading-tight mb-3">
                     Immer als Erster dabei.<br />
                     <em className="text-caramel not-italic">Folge uns auf Instagram.</em>
                   </h2>
 
-                  <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+                  <p className="text-white/65 text-sm md:text-lg leading-relaxed mb-6 max-w-lg">
                     Neue Veranstaltungen, Live-Musik-Abende, besondere Biermomente und Überraschungen — wer folgt, verpasst nichts. Immer aktuell, immer mittendrin.
                   </p>
 
