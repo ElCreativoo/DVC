@@ -229,10 +229,6 @@ export default function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10 animate-fadeUp" style={{ animationDelay: '270ms' }}>
-              <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer"
-                className="bg-caramel text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-amber-500 transition-all duration-300 hover:scale-105 text-center shadow-lg shadow-caramel/30">
-                WhatsApp
-              </a>
               <button onClick={() => setSommerOpen(true)}
                 className="border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-white/15 transition-all duration-300 text-center backdrop-blur-sm">
                 Programm im Sommer
