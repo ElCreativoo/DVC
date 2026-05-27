@@ -341,14 +341,12 @@ export default function App() {
                       <h3 className="font-display text-lg md:text-2xl font-semibold tracking-tight flex-1">{h.title}</h3>
                       <span className={`md:hidden text-white/40 text-lg transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>⌄</span>
                     </button>
-                    {/* Description — always shown on desktop, accordion on mobile */}
-                    <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px]' : 'max-h-0 md:max-h-[500px]'}`}>
-                      <div className="px-6 pb-6 md:px-10 md:pb-10 md:pt-0 -mt-2">
-                        <p className="text-white/55 leading-relaxed">{h.desc}</p>
-                        {isSnack && (
-                          <button onClick={() => setSnackOpen(true)} className="text-caramel text-xs font-semibold mt-4 tracking-wide uppercase block">Menü ansehen →</button>
-                        )}
-                      </div>
+                    {/* Description */}
+                    <div className="px-6 pb-6 md:px-10 md:pb-10 md:pt-0 -mt-2">
+                      <p className="text-white/55 leading-relaxed">{h.desc}</p>
+                      {isSnack && (
+                        <button onClick={() => setSnackOpen(true)} className="text-caramel text-xs font-semibold mt-4 tracking-wide uppercase block">Menü ansehen →</button>
+                      )}
                     </div>
                   </div>
                 </FadeIn>
