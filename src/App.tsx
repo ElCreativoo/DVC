@@ -489,13 +489,12 @@ export default function App() {
               alt="Wirt auf der Terrasse"
               className="rounded-3xl w-full h-[500px] md:h-[640px] object-cover shadow-2xl"
             />
-            <div className="absolute bottom-6 left-6 right-6 bg-cream rounded-2xl p-5 shadow-2xl border border-bark/8 flex items-center gap-4">
-              {/* Logo on cream/light background — show naturally (black logo visible) */}
-              <img src={IMAGES.logoRound} alt="Logo" className="w-16 h-16 flex-shrink-0 object-contain" />
+            <div className="absolute bottom-4 left-4 right-4 bg-cream rounded-xl md:rounded-2xl p-3 md:p-5 shadow-2xl border border-bark/8 flex items-center gap-3">
+              <img src={IMAGES.logoRound} alt="Logo" className="w-10 h-10 md:w-16 md:h-16 flex-shrink-0 object-contain" />
               <div>
-                <p className="font-display text-xl font-bold text-bark leading-snug">Verrückt genug,</p>
-                <p className="font-display text-xl font-bold text-caramel leading-snug">um besonders zu sein.</p>
-                <p className="text-bark text-sm mt-1 font-medium tracking-wide">Ruben · Inhaber & Gastgeber ❤️</p>
+                <p className="font-display text-sm md:text-xl font-bold text-bark leading-snug">Verrückt genug,</p>
+                <p className="font-display text-sm md:text-xl font-bold text-caramel leading-snug">um besonders zu sein.</p>
+                <p className="text-bark text-xs md:text-sm mt-0.5 font-medium tracking-wide">Ruben · Inhaber & Gastgeber ❤️</p>
               </div>
             </div>
           </FadeIn>
