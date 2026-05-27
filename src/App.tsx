@@ -193,8 +193,6 @@ export default function App() {
               <a key={l} href={h} onClick={() => setMenuOpen(false)}
                 className="block text-white font-medium hover:text-caramel transition-colors">{l}</a>
             ))}
-            <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
-              className="block text-white font-medium hover:text-caramel transition-colors">WhatsApp</a>
           </div>
         </div>
       </header>
