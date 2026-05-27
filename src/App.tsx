@@ -258,16 +258,17 @@ export default function App() {
                 className="hidden sm:block h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] -ml-4 md:-ml-6 translate-y-3"
               />
             </div>
+
+            {/* Wordmark — mobile only, below stats */}
+            <img
+              src={IMAGES.logoText2}
+              alt="Das verrückte Café zum Hoheneck"
+              className="sm:hidden mt-6 h-36 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp -ml-1"
+              style={{ animationDelay: '420ms' }}
+            />
           </div>
         </div>
 
-        {/* Wordmark — bottom-left on mobile, large */}
-        <img
-          src={IMAGES.logoText2}
-          alt="Das verrückte Café zum Hoheneck"
-          className="absolute bottom-10 left-0 sm:hidden h-36 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] animate-fadeUp pointer-events-none"
-          style={{ animationDelay: '450ms' }}
-        />
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 right-10 hidden md:flex flex-col items-center gap-2 opacity-60 animate-fadeUp" style={{ animationDelay: '500ms' }}>
