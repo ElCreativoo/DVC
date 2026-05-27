@@ -794,7 +794,7 @@ export default function App() {
               </div>
             </div>
             <div>
-              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">WhatsApp</p>
+              <p className="text-caramel text-xs tracking-widest uppercase font-semibold mb-4">Kontakt</p>
               <div className="space-y-3 text-white/60 text-sm">
                 <a href="https://wa.me/41796631441" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-caramel transition-colors">
                   💬 WhatsApp schreiben
