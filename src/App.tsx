@@ -235,8 +235,8 @@ export default function App() {
               </button>
             </div>
 
-            {/* Stats row + wordmark — all 4 side by side */}
-            <div className="flex items-center gap-3 sm:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
+            {/* Stats row + wordmark — all 3 side by side */}
+            <div className="flex items-end gap-3 sm:gap-8 animate-fadeUp" style={{ animationDelay: '350ms' }}>
               <div className="flex-shrink-0">
                 <p className="text-white text-xl sm:text-2xl md:text-3xl font-display font-bold drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Kult</p>
                 <p className="text-white/60 text-[10px] sm:text-xs mt-0.5 tracking-wide">Bar in Engelberg</p>
@@ -250,7 +250,7 @@ export default function App() {
               <img
                 src={IMAGES.logoText2}
                 alt="Das verrückte Café zum Hoheneck"
-                className="h-24 sm:h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] sm:-ml-4 md:-ml-6 sm:translate-y-3 flex-shrink-0"
+                className="h-11 sm:h-48 md:h-60 object-contain object-left drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)] sm:-ml-4 md:-ml-6 sm:translate-y-3 flex-shrink-0"
               />
             </div>
           </div>
